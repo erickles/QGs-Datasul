@@ -1,0 +1,11 @@
+DEFINE VARIABLE w-Result AS CHARACTER NO-UNDO.
+DEFINE VARIABLE w-Command AS CHARACTER NO-UNDO.
+
+ASSIGN w-Command = "java -classpath signandencrypt".
+
+INPUT THROUGH VALUE(w-Command).
+
+REPEAT:
+    IMPORT UNFORMATTED w-Result.
+    MESSAGE w-Result VIEW-AS ALERT-BOX.
+END.

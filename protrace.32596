@@ -1,0 +1,157 @@
+=====================================================
+PROGRESS stack trace as of Mon Nov 21 07:47:28 2016
+=====================================================
+Startup parameters:
+-pf C:\OP102B\startup.pf,-cpinternal ISO8859-1,-cpstream ISO8859-1,-cpcoll Basic,-cpcase Basic,-d dmy,-numsep 46,-numdec 44,(end .pf),-pf //srvvm17/totvs/datasul/dts-0/ERP/scripts-8080/datasul.pf,-mmax 16240,-s 9000,-l 30720,-TB 31,-TM 32,-d dmy,-E,-Bt 30720,-tmpbsize 8,-Mr 512,-D 500,-nb 255,-Mm 8192,-cpstream ibm850,-cpterm iso8859-1,-inp 32000,-tok 16000,-h 50,-numsep 46,-numdec 44,-noincrwarn,-T c:\datasul,-db emsfnd,-ld emsfnd,-S 20211,-H SRVLPAR04,-N tcp,(end .pf),-ininame //srvvm17/totvs/datasul/dts-0/ERP/scripts-8080/datasul-progress.ini,-p //srvvm17/totvs/datasul/dts-0/ERP/scripts-8080/datasul-configxml-alias.p,-param ,,15000,ess55813,,0,,DI,8080,6047AECF54F41B0255C6EE4EED9326EF.SRVVM178080,SRVVM17,menu-html,true,true,tortuga,192.168.1.185,srvvm48.ad.tortuga.com.br,,,,,,,true
+
+Exception code: C0000005 ACCESS_VIOLATION
+Fault address:  6B8F1328 01:00000328 C:\Windows\system32\LINKINFO.dll
+
+Registers:
+EAX:00000001
+EBX:0745B8A4
+ECX:00000000
+EDX:00000000
+ESI:0745BD98
+EDI:00000000
+CS:EIP:0023:6B8F1328
+SS:ESP:002B:0797C748  EBP:0797C750
+DS:002B  ES:002B  FS:0053  GS:002B
+Flags:00010202
+
+
+Debugging dll C:\Windows\system32\DBGHELP.DLL
+Symbol Path:
+ C:\OP102B\bin;C:\OP102B\pdbfiles
+
+
+Call Stack:
+Address   Frame
+6B8F1328  00000000  IsValidLinkInfo+9B
+7618EBF0  00000000  ILLoadFromStreamEx+213
+7618E54C  00000000  PathIsExe+2427
+762D7FAD  00000000  SHCreateItemFromRelativeName+8346
+7619E92E  00000000  SHCreateDefaultExtractIcon+296D
+76198B30  00000000  SHDefExtractIconW+1D30
+76198C48  00000000  SHDefExtractIconW+1E48
+7619FD1B  00000000  SHCreateDefaultExtractIcon+3D5A
+7619FC4C  00000000  SHCreateDefaultExtractIcon+3C8B
+7619FB8D  00000000  SHCreateDefaultExtractIcon+3BCC
+76194DCC  00000000  SHCreateShellItemArrayFromIDLists+223
+7628BF6F  00000000  Ordinal789+6286
+7619F170  00000000  SHCreateDefaultExtractIcon+31AF
+7619F05D  00000000  SHCreateDefaultExtractIcon+309C
+7619F212  00000000  SHCreateDefaultExtractIcon+3251
+7619F0C6  00000000  SHCreateDefaultExtractIcon+3105
+7619F105  00000000  SHCreateDefaultExtractIcon+3144
+7627D19D  00000000  StrChrW+775
+761D76F2  00000000  IsNetDrive+A7E
+762D810B  00000000  Ordinal873+3D
+7629AC5A  00000000  Ordinal874+4AFE
+761D76F2  00000000  IsNetDrive+A7E
+762D810B  00000000  Ordinal873+3D
+6AEFBBF0  00000000  DllCanUnloadNow+3BB6A
+6AEFB609  00000000  DllCanUnloadNow+3B583
+6AEC0C9E  00000000  DllCanUnloadNow+C18
+761D629B  00000000  Ordinal767+433
+761D8B2B  00000000  DAD_SetDragImage+732
+761D8C5F  00000000  DAD_SetDragImage+866
+75B6B2B1  00000000  PathBuildRootW+4C
+77887E5F  00000000  RtlClearAllBits+110
+77877FBD  00000000  TpCallbackIndependent+710
+7523336A  00000000  BaseThreadInitThunk+12
+77859902  00000000  RtlInitializeExceptionChain+63
+778598D5  00000000  RtlInitializeExceptionChain+36
+
+
+** ABL Stack Trace **
+
+--> pi_system_dialog_get_file men/men702dc.w (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men702dc.r) at line 2141
+    USER-INTERFACE-TRIGGER men/men702dc.w (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men702dc.r) at line 1383
+    men/men702dc.w (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men702dc.r) at line 2114
+    SYSTEM-TRIGGER men/men906za.p (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men906za.r) at line 1692
+    men/men906za.p (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men906za.r) at line 2129
+    //srvvm17/totvs/datasul/dts-0/ERP/scripts-8080/datasul-configxml-alias.p (\\srvvm17\totvs\datasul\dts-0\ERP\scripts-8080\datasul-configxml-alias.p) at line 34
+
+** Persistent procedures/Classes **
+
+Handle  File Name
+001099  \\srvvm17\totvs\datasul\dts-0\ERP\hcm\prghur\fpp\fp9200.r
+001067  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb920aa.r
+001063  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\db\DBAppRepository.r
+001062  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\db\DBHistoryManager.r
+001061  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\db\DBMessageRepository.r
+001060  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\db\DBConfigurationProvider.r
+001060  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\IConfigurationProvider.r
+001059  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\util\Properties.r
+001058  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\eai\EAILog.r
+000000  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\eai\EAILog.r (STATIC)
+001056  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\eai\ConfigurationManager.r
+000000  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\eai\ConfigurationManager.r (STATIC)
+001040  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb906zb.r
+001039  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\prgtec\btb\btb901zo.r
+000000  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\fluig\FluigProperties.r (STATIC)
+001017  \\srvvm17\totvs\datasul\dts-0\ERP\ems2\utp\ut-log.r
+001012  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb432zg.r
+001011  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb432za.r
+001005  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\utp\ut-func.r
+001004  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\utp\ut-win.r
+001002  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb901zo.r
+001000  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\utp\ut-globalsession.r
+
+//=====================================================
+PROGRESS stack trace as of Mon Nov 21 07:47:29 2016
+//=====================================================
+Exception code: C0000005 ACCESS_VIOLATION
+Fault address:  6B8F1328 01:00000328 C:\Windows\system32\LINKINFO.dll
+
+Registers:
+EAX:00000001
+EBX:0745B8A4
+ECX:00000000
+EDX:00000000
+ESI:0745BD98
+EDI:00000000
+CS:EIP:0023:6B8F1328
+SS:ESP:002B:0797C748  EBP:0797C750
+DS:002B  ES:002B  FS:0053  GS:002B
+Flags:00010202
+
+Call Stack:
+Address   Frame
+6B8F1328  0797C750  IsValidLinkInfo+9B
+7618EBF0  0797C778  ILLoadFromStreamEx+213
+7618E54C  0797DA48  PathIsExe+2427
+762D7FAD  0797DA64  SHCreateItemFromRelativeName+8346
+7619E92E  0797DABC  SHCreateDefaultExtractIcon+296D
+76198B30  0797DD20  SHDefExtractIconW+1D30
+76198C48  0797DDD8  SHDefExtractIconW+1E48
+7619FD1B  0797E480  SHCreateDefaultExtractIcon+3D5A
+7619FC4C  0797E924  SHCreateDefaultExtractIcon+3C8B
+7619FB8D  0797E940  SHCreateDefaultExtractIcon+3BCC
+76194DCC  0797EDF4  SHCreateShellItemArrayFromIDLists+223
+7628BF6F  0797EE28  Ordinal789+6286
+7619F170  0797EE6C  SHCreateDefaultExtractIcon+31AF
+7619F05D  0797EEC4  SHCreateDefaultExtractIcon+309C
+7619F212  0797EEF4  SHCreateDefaultExtractIcon+3251
+7619F0C6  0797EF44  SHCreateDefaultExtractIcon+3105
+7619F105  0797EF60  SHCreateDefaultExtractIcon+3144
+7627D19D  0797FC24  StrChrW+775
+761D76F2  0797FC40  IsNetDrive+A7E
+762D810B  0797FC70  Ordinal873+3D
+7629AC5A  0797FC9C  Ordinal874+4AFE
+761D76F2  0797FCB8  IsNetDrive+A7E
+762D810B  0797FCE8  Ordinal873+3D
+6AEFBBF0  0797FD10  DllCanUnloadNow+3BB6A
+6AEFB609  0797FD28  DllCanUnloadNow+3B583
+6AEC0C9E  0797FD48  DllCanUnloadNow+C18
+761D629B  0797FD64  Ordinal767+433
+761D8B2B  0797FDAC  DAD_SetDragImage+732
+761D8C5F  0797FDB4  DAD_SetDragImage+866
+75B6B2B1  0797FDC4  PathBuildRootW+4C
+77887E5F  0797FE38  RtlClearAllBits+110
+77877FBD  0797FF88  TpCallbackIndependent+710
+7523336A  0797FF94  BaseThreadInitThunk+12
+77859902  0797FFD4  RtlInitializeExceptionChain+63
+778598D5  0797FFEC  RtlInitializeExceptionChain+36
+

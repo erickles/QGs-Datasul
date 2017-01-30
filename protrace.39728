@@ -1,0 +1,124 @@
+=====================================================
+PROGRESS stack trace as of Fri Nov 18 09:25:44 2016
+=====================================================
+Startup parameters:
+-pf C:\OP102B\startup.pf,-cpinternal ISO8859-1,-cpstream ISO8859-1,-cpcoll Basic,-cpcase Basic,-d dmy,-numsep 46,-numdec 44,(end .pf),-pf //srvvm17/totvs/datasul/dts-0/ERP/scripts-8080/datasul.pf,-mmax 16240,-s 9000,-l 30720,-TB 31,-TM 32,-d dmy,-E,-Bt 30720,-tmpbsize 8,-Mr 512,-D 500,-nb 255,-Mm 8192,-cpstream ibm850,-cpterm iso8859-1,-inp 32000,-tok 16000,-h 50,-numsep 46,-numdec 44,-noincrwarn,-T c:\datasul,-db emsfnd,-ld emsfnd,-S 20211,-H SRVLPAR04,-N tcp,(end .pf),-ininame //srvvm17/totvs/datasul/dts-0/ERP/scripts-8080/datasul-progress.ini,-p //srvvm17/totvs/datasul/dts-0/ERP/scripts-8080/datasul-configxml-alias.p,-param ,,15000,ess55813,,0,,DI,8080,8FA6F42FDECAC176E289BA3CCEB7D582.SRVVM178080,SRVVM17,menu-html,true,true,tortuga,192.168.1.185,srvvm48.ad.tortuga.com.br,,,,,,,true
+
+Exception code: C0000005 ACCESS_VIOLATION
+Fault address:  639F14FD 01:000004FD C:\Windows\system32\wpdshext.dll
+
+Registers:
+EAX:00000000
+EBX:078DBAB0
+ECX:E558DCE0
+EDX:76163328
+ESI:07687FF0
+EDI:078ED000
+CS:EIP:0023:639F14FD
+SS:ESP:002B:07EBFAD8  EBP:07EBFC0C
+DS:002B  ES:002B  FS:0053  GS:002B
+Flags:00010282
+
+
+Debugging dll C:\Windows\system32\DBGHELP.DLL
+Symbol Path:
+ C:\OP102B\bin;C:\OP102B\pdbfiles
+
+
+Call Stack:
+Address   Frame
+639F14FD  00000000  0001:000004FD C:\Windows\system32\wpdshext.dll
+7616527E  00000000  SHGetFolderPathAndSubDirW+225
+7628D65B  00000000  Ordinal789+7972
+65E1079F  00000000  DllCanUnloadNow+20719
+65DF0C9E  00000000  DllCanUnloadNow+C18
+761D629B  00000000  Ordinal767+433
+761D8B2B  00000000  DAD_SetDragImage+732
+761D8C5F  00000000  DAD_SetDragImage+866
+75B6B2B1  00000000  PathBuildRootW+4C
+77887E5F  00000000  RtlClearAllBits+110
+77877FBD  00000000  TpCallbackIndependent+710
+7523336A  00000000  BaseThreadInitThunk+12
+77859902  00000000  RtlInitializeExceptionChain+63
+778598D5  00000000  RtlInitializeExceptionChain+36
+
+
+** ABL Stack Trace **
+
+--> adecomm/_getfile.p (adecomm/_getfile.r) at line 191
+    adeedit/_dlggetf.p (adeedit/_dlggetf.r) at line 987
+    OpenFile adeedit/_proedit.p (adeedit/_proedit.r) at line 6799
+    USER-INTERFACE-TRIGGER adeedit/_proedit.p (adeedit/_proedit.r) at line 1877
+    adeedit/_proedit.p (adeedit/_proedit.r) at line 12280
+    _edit.r (C:\OP102B\gui\_edit.r) at line 408
+    pi-executa-programa-nao-cadastrado men/men702dd.p (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men702dd.r) at line 1837
+    men/men702dd.p (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men702dd.r) at line 1317
+    USER-INTERFACE-TRIGGER men/men702dc.w (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men702dc.r) at line 1747
+    USER-INTERFACE-TRIGGER men/men702dc.w (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men702dc.r) at line 1772
+    men/men702dc.w (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men702dc.r) at line 2114
+    SYSTEM-TRIGGER men/men906za.p (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men906za.r) at line 1692
+    men/men906za.p (\\srvvm17\totvs\datasul\dts-0\ERP\fnd\men\men906za.r) at line 2129
+    //srvvm17/totvs/datasul/dts-0/ERP/scripts-8080/datasul-configxml-alias.p (\\srvvm17\totvs\datasul\dts-0\ERP\scripts-8080\datasul-configxml-alias.p) at line 34
+
+** Persistent procedures/Classes **
+
+Handle  File Name
+001134  C:\OP102B\gui\_edit.r
+001099  \\srvvm17\totvs\datasul\dts-0\ERP\hcm\prghur\fpp\fp9200.r
+001067  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb920aa.r
+001063  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\db\DBAppRepository.r
+001062  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\db\DBHistoryManager.r
+001061  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\db\DBMessageRepository.r
+001060  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\db\DBConfigurationProvider.r
+001060  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\eai\IConfigurationProvider.r
+001059  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\util\Properties.r
+001058  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\eai\EAILog.r
+000000  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\eai\EAILog.r (STATIC)
+001056  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\eai\ConfigurationManager.r
+000000  \\srvvm17\totvs\datasul\dts-0\ERP\eai2\com\totvs\datasul\eai\ConfigurationManager.r (STATIC)
+001040  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb906zb.r
+001039  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\prgtec\btb\btb901zo.r
+000000  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\com\totvs\datasul\fluig\FluigProperties.r (STATIC)
+001017  \\srvvm17\totvs\datasul\dts-0\ERP\ems2\utp\ut-log.r
+001012  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb432zg.r
+001011  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb432za.r
+001005  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\utp\ut-func.r
+001004  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\utp\ut-win.r
+001002  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\btb\btb901zo.r
+001000  \\srvvm17\totvs\datasul\dts-0\ERP\fnd\utp\ut-globalsession.r
+
+//=====================================================
+PROGRESS stack trace as of Fri Nov 18 09:25:45 2016
+//=====================================================
+Exception code: C0000005 ACCESS_VIOLATION
+Fault address:  639F14FD 01:000004FD C:\Windows\system32\wpdshext.dll
+
+Registers:
+EAX:00000000
+EBX:078DBAB0
+ECX:E558DCE0
+EDX:76163328
+ESI:07687FF0
+EDI:078ED000
+CS:EIP:0023:639F14FD
+SS:ESP:002B:07EBFAD8  EBP:07EBFC0C
+DS:002B  ES:002B  FS:0053  GS:002B
+Flags:00010282
+
+Call Stack:
+Address   Frame
+639F14FD  07EBFC0C  0001:000004FD C:\Windows\system32\wpdshext.dll
+7616527E  07EBFC64  SHGetFolderPathAndSubDirW+225
+7628D65B  07EBFCB0  Ordinal789+7972
+65E1079F  07EBFD28  DllCanUnloadNow+20719
+65DF0C9E  07EBFD48  DllCanUnloadNow+C18
+761D629B  07EBFD64  Ordinal767+433
+761D8B2B  07EBFDAC  DAD_SetDragImage+732
+761D8C5F  07EBFDB4  DAD_SetDragImage+866
+75B6B2B1  07EBFDC4  PathBuildRootW+4C
+77887E5F  07EBFE38  RtlClearAllBits+110
+77877FBD  07EBFF88  TpCallbackIndependent+710
+7523336A  07EBFF94  BaseThreadInitThunk+12
+77859902  07EBFFD4  RtlInitializeExceptionChain+63
+778598D5  07EBFFEC  RtlInitializeExceptionChain+36
+

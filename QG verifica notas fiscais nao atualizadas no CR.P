@@ -1,0 +1,49 @@
+OUTPUT TO c:\temp\nfs_122016.csv.
+
+PUT "dt-emis-nota;"
+    "dt-atual-cr;"
+    "nome-ab-cli;"
+    "cod-estabel;"
+    "nr-nota-fis;"
+    "serie;"
+    "valor;"
+    "No acr?;"
+    "Cancelada?"
+    SKIP.
+
+FOR EACH nota-fiscal 
+   WHERE nota-fiscal.dt-atual-cr  <> ?
+     AND nota-fiscal.emite-duplic = YES
+     AND nota-fiscal.dt-canc = ?
+     AND nota-fiscal.dt-emis-nota >= 12/20/2016:
+    
+    FIND FIRST tit_acr WHERE tit_acr.cod_estab       = nota-fiscal.cod-estabel 
+                         AND tit_acr.cod_ser_docto   = nota-fiscal.serie
+                         AND tit_acr.cod_espec_docto = "DP"
+                         AND tit_acr.cod_tit_acr     = nota-fiscal.nr-nota-fis
+                         AND tit_acr.cdn_cliente     = nota-fiscal.cod-emitente
+                         NO-LOCK NO-ERROR.
+
+    IF NOT AVAIL tit_acr THEN DO:
+      
+        /*nota-fiscal.dt-atual-cr = ?.*/
+
+        PUT nota-fiscal.dt-emis-nota                            ";"
+            nota-fiscal.dt-atual-cr                             ";"
+            nota-fiscal.nome-ab-cli                             ";"
+            nota-fiscal.cod-estabel                             ";"
+            nota-fiscal.nr-nota-fis                             ";"
+            nota-fiscal.serie                                   ";"
+            nota-fiscal.vl-tot-nota                             ";"
+            IF AVAIL tit_acr THEN "Sim" ELSE "Nao"              ";"
+            IF nota-fiscal.dt-canc = ? THEN "Nao" ELSE "Sim"    SKIP.
+    
+    END.
+    
+    /*
+    IF AVAIL tit_acr THEN
+        nota-fiscal.dt-atual-cr = tit_acr.dat_emis_docto.
+    */
+END.
+
+OUTPUT CLOSE.
