@@ -23,11 +23,11 @@ DEFINE VARIABLE vSubject    AS CHARACTER NO-UNDO
                                FORMAT "X(50)"
                                LABEL "Subject" 
 
-                               INITIAL "test email using Progress 4GL sockets".
+                               INITIAL "Teste de email usando Progress 4GL sockets".
 
 DEFINE VARIABLE vBody       AS CHARACTER NO-UNDO
                                VIEW-AS EDITOR INNER-LINES 20 INNER-CHARS 70
-                               SCROLLBAR-VERTICAL INITIAL "test email".
+                               SCROLLBAR-VERTICAL INITIAL "Teste de email".
 
 DEFINE VARIABLE vdebugmode  AS LOGICAL NO-UNDO
                                VIEW-AS TOGGLE-BOX.
