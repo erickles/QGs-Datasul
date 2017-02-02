@@ -139,14 +139,53 @@ BUFFER Options:HANDLE:ATTACH-DATA-SOURCE(DATA-SOURCE dsOptions:HANDLE).
            tt-sub-menu.hasDetails   = YES
            tt-sub-menu.url          = 'customerInsertion'
            tt-sub-menu.menuOption   = YES.
+
+    /* Criando as opcoes do submenu de ficha de cliente */
+    CREATE tt-option.
+    ASSIGN tt-option.idx          = 1
+           tt-option.submenuUrl   = tt-sub-menu.url
+           tt-option.name         = 'Principal'
+           tt-option.url          = 'basic'.
+
+    CREATE tt-option.
+    ASSIGN tt-option.idx          = 2
+           tt-option.submenuUrl   = tt-sub-menu.url
+           tt-option.name         = 'Enderecos'
+           tt-option.url          = 'adresses'.
+
+    CREATE tt-option.
+    ASSIGN tt-option.idx          = 3
+           tt-option.submenuUrl   = tt-sub-menu.url
+           tt-option.name         = 'Comercial'
+           tt-option.url          = 'commercial'.
+
+    CREATE tt-option.
+    ASSIGN tt-option.idx          = 4
+           tt-option.submenuUrl   = tt-sub-menu.url
+           tt-option.name         = 'Plantel'
+           tt-option.url          = 'breeding'.
+
+    CREATE tt-option.
+    ASSIGN tt-option.idx          = 5
+           tt-option.submenuUrl   = tt-sub-menu.url
+           tt-option.name         = 'Referencia'
+           tt-option.url          = 'reference'.
+
+    CREATE tt-option.
+    ASSIGN tt-option.idx          = 6
+           tt-option.submenuUrl   = tt-sub-menu.url
+           tt-option.name         = 'Documenta‡Æo'
+           tt-option.url          = 'documents'.
+
+    /* Criando as opcoes do submenu de ficha de cliente */
     
     CREATE tt-sub-menu.
     ASSIGN tt-sub-menu.idx          = 3
            tt-sub-menu.menuIdx      = tt-menu.idx
            tt-sub-menu.name         = 'Manuten‡Æo de consulta'
-           tt-sub-menu.hasDetails   = YES
+           tt-sub-menu.hasDetails   = NO
            tt-sub-menu.url          = 'maintenanceConsult'
-           tt-sub-menu.menuOption   = YES.
+           tt-sub-menu.menuOption   = NO.
 
     /* Criando os sub menus da parte de processos */
 
@@ -178,9 +217,9 @@ BUFFER Options:HANDLE:ATTACH-DATA-SOURCE(DATA-SOURCE dsOptions:HANDLE).
     ASSIGN tt-sub-menu.idx          = 3
            tt-sub-menu.menuIdx      = tt-menu.idx
            tt-sub-menu.name         = 'Clientes'
-           tt-sub-menu.hasDetails   = YES
+           tt-sub-menu.hasDetails   = NO
            tt-sub-menu.url          = 'customers'
-           tt-sub-menu.menuOption   = YES.
+           tt-sub-menu.menuOption   = NO.
 
     /* Criando os sub menus da parte de consultas */
 
