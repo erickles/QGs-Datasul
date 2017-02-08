@@ -84,7 +84,7 @@ DEFINE BUFFER bf-envia-email FOR es-envia-email.
 
 DEFINE VARIABLE iCont AS INTEGER     NO-UNDO.
 
-dtParametro = TODAY.
+dtParametro = TODAY - 1.
 
 UPDATE dtParametro.
 
@@ -119,13 +119,13 @@ PROCEDURE pi-mail-repres:
         IF AVAIL emsuni.pessoa_fisic AND fnValidaEmail(TRIM(emsuni.pessoa_fisic.cod_e_mail)) THEN DO:
             
             ASSIGN cNomeRepres = emsuni.pessoa_fisic.nom_pessoa.
-
+            /*
             RUN utp/ut-msgs.p (INPUT "show",
                                INPUT 27100,
                                INPUT "Gerar e-mail?~~Deseja gerar o envio de e-mail para o representante " + cNomeRepres + "?").
 
             IF RETURN-VALUE = "YES" THEN DO:
-
+            */
                 IF adm-ambiente = "PRODUCAO" THEN DO:
     
                     cModelo = SEARCH("doc\mail_pag_comissao.html").
@@ -182,8 +182,11 @@ PROCEDURE pi-mail-repres:
                            es-envia-email.hr-env        = ?
                            es-envia-email.erro          = ""
                            es-envia-email.u-char-1      = "".
+
+                    RELEASE es-envia-email.
+
                 END.
-            END.
+            /*END.*/
         END.
         ELSE DO:
             
@@ -191,13 +194,13 @@ PROCEDURE pi-mail-repres:
             IF AVAIL emsuni.pessoa_jurid AND fnValidaEmail(TRIM(emsuni.pessoa_jurid.cod_e_mail)) THEN DO:
                 
                 ASSIGN cNomeRepres = emsuni.pessoa_jurid.nom_pessoa.
-
+                /*
                 RUN utp/ut-msgs.p (INPUT "show",
                                    INPUT 27100,
                                    INPUT "Gerar e-mail?~~Deseja gerar o envio de e-mail para o representante " + cNomeRepres + "?").
 
                 IF RETURN-VALUE = "YES" THEN DO:
-                
+                */
 
                 IF adm-ambiente = "PRODUCAO" THEN DO:
 
@@ -255,7 +258,8 @@ PROCEDURE pi-mail-repres:
                            es-envia-email.hr-env        = ?
                            es-envia-email.erro          = ""
                            es-envia-email.u-char-1      = "".
-                    END.
+                    RELEASE es-envia-email.
+                    /*END.*/
                 END.
             END.
         END.
