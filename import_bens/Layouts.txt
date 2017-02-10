@@ -1,0 +1,670 @@
+Arquivo com Informações dos Bens Patrimoniais.                                  
+----------------------------------------------
+  Seq  Descrição                                 Formato               Obrig  Utilização
+-----  ----------------------------------------  --------------------  -----  --------------------------------------------------
+   10  Nro Sequencial Bem                        9(08)                 Sim    Informar um código numérico que identifique o     
+                                                                              bem patrimonial. Poderá ser um número
+                                                                              sequencial simples, sendo que será utilizado
+                                                                              pelos demais arquivo importados para
+                                                                              relacionar as informações ao bem patrimonial.
+   20  Empresa                                   x(3)                  Sim    Informar código alfa-numérico que identifique     
+                                                                              a empresa em que o bem está alocado. Esta deve
+                                                                              estar cadastrada previamente dentro do EMS.
+   30  Conta Patrimonial                         x(18)                 Sim    Informar um código alfa-numérico que              
+                                                                              identificará a conta patrimonial do bem. Ex:
+                                                                              Móveis, Maquinas, etc. Esta conta patrimonial
+                                                                              já deve estar cadastrada no EMS.
+   40  Bem Patrimonial                           9(09)                 Sim    Informar um código numérico que identifique o     
+                                                                              bem patrimonial.
+   50  Sequência Bem                             9(05)                 Sim    Informar um código numérico que identifique       
+                                                                              junto com a empresa, conta patrimonial e
+                                                                              número do bem, um determinado bem patrimonial
+                                                                              compondo, desta forma, a chave única do mesmo.
+   60  Descrição Bem Pat                         x(40)                 Sim    Informar a descrição do bem patrimonial.          
+   70  Número Plaqueta                           x(20)                 Sim    Informar o código alfa-numérico adotado para      
+                                                                              identificação do bem impresso na plaqueta. Não
+                                                                              poderão existir dois bens com o mesmo código
+                                                                              de plaqueta para a mesma empresa.
+   80  Quantidade Bens Representados             9(08)                 Sim    Informar a quantidade de unidades que o bem       
+                                                                              representa.
+   90  Periodicidade                             x(14)                 Sim    Informar tipo de periodicidade de inventário      
+                                                                              padrão que o bem patrimonial possui. Os
+                                                                              valores que este atributo pode assumir são:
+                                                                              Outra, Diária, Semanal, Quinzenal, Mensal,
+                                                                              Bimestral, Trimestral, Quadrimestral,
+                                                                              Semestral, Anual e Nenhuma
+  100  Data Aquisição                            99/99/9999            Sim    Informar data que o bem foi adquirido.            
+                                                                              DD/MM/AAAA.
+  110  Estabelecimento                           x(5)                  Sim    Informar o estabelecimento onde o bem             
+                                                                              patrimonial está alocado, devendo estar
+                                                                              cadastrado previamento dentro do EMS.
+  120  Espécie Bem Patrimonial                   x(6)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique a espécie do bem patrimonial. Se
+                                                                              for informada, deverá estar cadastrada
+                                                                              anteriormente do EMS.
+  130  Marca                                     x(6)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique a marca do bem patrimonial.
+                                                                              Observar que se for informado, deverá estar
+                                                                              cadastrado dentro do EMS.
+  140  Modelo                                    x(8)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique o modelo do bem patrimonial.
+                                                                              Observar que quando for informado, deverá
+                                                                              estar cadastrado anteriormente no EMS.
+  150  Licença Uso                               x(12)                 Não    Informar um código alfa-numérico que              
+                                                                              identifique a licença de uso que o bem
+                                                                              patrimonial possui. Observar que quando for
+                                                                              informada, deverá estar cadastrada
+                                                                              anteriormente dentro do EMS.
+  160  Especificação Técnica                     x(8)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique a especificação técnica que o bem
+                                                                              patrimonial possui. Observar que quando for
+                                                                              informada, deverá estar cadastrada
+                                                                              anteriormente dentro do EMS.
+  170  Estado Físico                             x(8)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique o estado físico que o bem
+                                                                              patrimonial possui. Observar que quando for
+                                                                              informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS.
+  180  Arrendador                                x(6)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique o arrendador do bem patrimonial.
+                                                                              Observar que quando for informado, deverá
+                                                                              estar cadastrado anteriormente dentro do EMS.
+  190  Contrato Leasing                          x(12)                 Não    Informar um código alfa-numérico que              
+                                                                              identifique o contrato de leasing do bem
+                                                                              patrimonial. Observar que quando for
+                                                                              informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS para o arrendador.
+  200  Fornecedor                                9(06)                 Não    Informar um código numérico que identifique o     
+                                                                              fornecedor do bem ou da incorporação
+                                                                              patrimonial. Observar que quando for
+                                                                              informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS.
+  210  Localização                               x(12)                 Não    Informar um código alfa-numérico que              
+                                                                              identifique a localização do bem patrimonial
+                                                                              dentro do estabelecimento informado. Observar
+                                                                              que quando for informado, deverá estar
+                                                                              cadastrado anteriormente dentro do EMS.
+  220  Responsável                               x(12)                 Não    Informar um código alfa-numérico que              
+                                                                              identifique o usuário responsável pelo bem
+                                                                              patrimonial dentro do estabelecimento e
+                                                                              empresa informados. Observar que quando for
+                                                                              informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS.
+  230  Último Inventário                         99/99/9999            Não    Informar a data do último inventário realizado    
+                                                                              para o bem patrimonial. Deverá ser informado
+                                                                              DD/MM/AAAA.
+  240  Narrativa Bem                             x(2000)               Não    Informar um texto de narrativa do bem             
+                                                                              patrimonial. O tamanho do texto é ilimitado,
+                                                                              não necessitando seguir o tamanho máximo
+                                                                              estipulado no formato informado.
+  250  Seguradora                                x(8)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique a seguradora que o bem patrimonial
+                                                                              está associado. Observar que quando for
+                                                                              informada, deverá estar cadastrada
+                                                                              anteriormente dentro do EMS.
+  260  Apólice Seguro                            x(12)                 Não    Informar um código alfa-numérico que              
+                                                                              identifique a apólice de seguro que o bem
+                                                                              patrimonial está associado. Observar que
+                                                                              quando for informada, deverá estar cadastrada
+                                                                              anteriormente dentro do EMS, para a seguradora
+                                                                              informada.
+  270  Início Valid Apólice                      99/99/9999            Não    Informar a data de início de validade de          
+                                                                              apólice de seguro a qual bem patrimonial está
+                                                                              coberto. Deverá ser informado DD/MM/AAAA.
+  280  Fim Validade Apólice                      99/99/9999            Não    Informar a data de fim de validade de apólice     
+                                                                              de seguro a qual bem patrimonial está coberto.
+                                                                              Deverá ser informado DD/MM/AAAA.
+  290  Prêmio Seguro                             9(12),99              Não    Informar valor segurado do bem patrimonial.       
+                                                                              Deverá ser informado apenas quando as
+                                                                              informações de seguradora e apólice seguro
+                                                                              forem informados.
+  300  Seguradora (1)                            x(8)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique a seguradora que o bem patrimonial
+                                                                              está associado. Observar que quando for
+                                                                              informada, deverá estar cadastrada
+                                                                              anteriormente dentro do EMS.
+  310  Apólice Seguro (1)                        x(12)                 Não    Informar um código alfa-numérico que              
+                                                                              identifique a apólice de seguro que o bem
+                                                                              patrimonial está associado. Observar que
+                                                                              quando for informada, deverá estar cadastrada
+                                                                              anteriormente dentro do EMS, para a seguradora
+                                                                              informada.
+  320  Início Valid Apólice (1)                  99/99/9999            Não    Informar a data de início de validade de          
+                                                                              apólice de seguro a qual bem patrimonial está
+                                                                              coberto. Deverá ser informado DD/MM/AAAA.
+  330  Fim Validade Apólice (1)                  99/99/9999            Não    Informar a data de fim de validade de apólice     
+                                                                              de seguro a qual bem patrimonial está coberto.
+                                                                              Deverá ser informado DD/MM/AAAA.
+  340  Prêmio Seguro (1)                         9(12),99              Não    Informar valor segurado do bem patrimonial.       
+                                                                              Deverá ser informado apenas quando as
+                                                                              informações de seguradora e apólice seguro
+                                                                              forem informados.
+  350  Seguradora (2)                            x(8)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique a seguradora que o bem patrimonial
+                                                                              está associado. Observar que quando for
+                                                                              informada, deverá estar cadastrada
+                                                                              anteriormente dentro do EMS.
+  360  Apólice Seguro (2)                        x(12)                 Não    Informar um código alfa-numérico que              
+                                                                              identifique a apólice de seguro que o bem
+                                                                              patrimonial está associado. Observar que
+                                                                              quando for informada, deverá estar cadastrada
+                                                                              anteriormente dentro do EMS, para a seguradora
+                                                                              informada.
+  370  Início Valid Apólice (2)                  99/99/9999            Não    Informar a data de início de validade de          
+                                                                              apólice de seguro a qual bem patrimonial está
+                                                                              coberto. Deverá ser informado DD/MM/AAAA.
+  380  Fim Validade Apólice (2)                  99/99/9999            Não    Informar a data de fim de validade de apólice     
+                                                                              de seguro a qual bem patrimonial está coberto.
+                                                                              Deverá ser informado DD/MM/AAAA.
+  390  Prêmio Seguro (2)                         9(12),99              Não    Informar valor segurado do bem patrimonial.       
+                                                                              Deverá ser informado apenas quando as
+                                                                              informações de seguradora e apólice seguro
+                                                                              forem informados.
+  400  Docto Entrada                             x(16)                 Não    Informar o código do documento de entrada que     
+                                                                              originou o bem patrimonial, devendo este,
+                                                                              quando informado, estar cadastrado previamente
+                                                                              dentro do EMS.
+  410  Numero Item                               9(06)                 Não    Informar o código numérico do item de             
+                                                                              documento de entrada que deu origem ao bem
+                                                                              patrimonial em questão. Se informado, deverá
+                                                                              estar cadastrado dentro do EMS.
+  420  Pessoa Garantia                           9(09)                 Não    Informar um código numérico que identifique a     
+                                                                              pessoa jurídica que fornece a garantia do bem
+                                                                              em questão. Esta pessoa, quando informada,
+                                                                              deverá dentro do EMS.
+  430  Inicio Garantia                           99/99/9999            Não    Informar data início de validade da garantia      
+                                                                              do bem.
+  440  Fim Garantia                              99/99/9999            Não    Informar data fim de validade da garantia do      
+                                                                              bem.
+  450  Termo Garantia                            x(2000)               Não    Informar texto referente ao termo de garantia.    
+                                                                              O tamanho do texto é ilimitado, não
+                                                                              necessitando obedecer ao tamanho estipulado.
+  460  Grupo Cálculo                             x(6)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique o grupo de cálculo do bem
+                                                                              patrimonial. Observar que quando for
+                                                                              informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS. Caso seja
+                                                                              informado o grupo de cálculo, deverá também
+                                                                              obrigatoriamente ser informado o percentual de
+                                                                              depreciação no arquivo de valores.Caso não
+                                                                              seja informado o grupo de cálculo, sera
+                                                                              adotado o grupo da conta patrimonial, com os
+                                                                              percentuais de depreciação descritos na mesma.
+  470  Data Movimento                            99/99/9999            Não    Informar quando necessário, a data de quando o    
+                                                                              bem patrimonial foi baixado.
+  480  Perc Baixado                              9(3),99               Não    Informar quando necessário, um valor que          
+                                                                              represente o percentual ja baixado do bem
+                                                                              patrimonial.
+  490  Início Cálculo Dpr                        99/99/9999            Não    Informar quando necessário, a data de início      
+                                                                              de cálculo da depreciação/amortização do bem
+                                                                              patrimonial
+  500  Data Cálculo                              99/99/9999            Não    Informar a data contábil do bem. Caso a mesma     
+                                                                              não esteja preenchida será assumido para ela o
+                                                                              valor da data que o bem foi adquirido.
+                                                                              DD/MM/AAAA.
+  510  Série Nota                                x(5)                  Não    Informar quando necessário, a série da Nota       
+                                                                              Fiscal que originou o bem.
+  520  Bem Importado                             yes/no                Sim    Informar se o bem é Importado ou não.             
+  530  Credita PIS                               yes/no                Sim    Informar se o bem Credita PIS ou não.             
+  540  Credita COFINS                            yes/no                Sim    Informar se o bem Credita COFINS ou não.          
+  550  Nro Parcelas Crédito PIS/COFINS           9(02)                 Sim    Quando o desconto do Crédito de PIS/COFINS        
+                                                                              deverá ser efetuado de forma parcelada,
+                                                                              deve-se informar a quantidade de parcelas em
+                                                                              que o desconto será efetuado.
+  560  Parcelas Descontadas                      9(02)                 Sim    Informar a quantidade de parcelas de Crédito      
+                                                                              PIS/COFINS já descontadas, na implantação de
+                                                                              Bens já imobilizados que efetuam crédito de
+                                                                              PIS/COFINS parcelado.
+  570  Valor Crédito PIS                         9(9),99               Não    Valor do Crédito de PIS - Esse valor deverá       
+                                                                              ser informado somente quando a quantidade de
+                                                                              parcelas para desconto de crédito PIS/COFINS,
+                                                                              for maior do que ZERO.
+  580  Valor Crédito COFINS                      9(9),99               Não    Valor do Crédito de COFINS - Esse valor deverá    
+                                                                              ser informado somente quando a quantidade de
+                                                                              parcelas para desconto de crédito PIS/COFINS,
+                                                                              for maior do que ZERO.
+  590  Credita CSLL                              yes/no                Sim    Informar se o bem Credita CSLL ou não.            
+  600  Exercícios Crédito CSLL                   9(02)                 Sim    Quando for informado para creditar CSLL, favor    
+                                                                              informar os exercícios deste crédito.
+  610  Valor Base PIS                            9(9),99               Não    Valor da Base de PIS - Esse valor deverá ser      
+                                                                              informado somente quando o bem credita PIS .
+  620  Valor Base COFINS                         9(9),99               Não    Valor da Base de COFINS - Esse valor deverá       
+                                                                              ser informado somente quando o bem credita
+                                                                              COFINS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------- - DCF727ZB-  1.00.01.028
+--------------------------------------------------------------------------------------------------------------------- Página:      6
+DSM PRODUTOS NUTRICIONAIS BRASIL S.A.                                                                     Layout de Importação ASCII
+----------------------------------------------------------------------------------------------------------------- 23/01/2017 - 10:02
+
+Arquivo com Informações das Incorporações do Bem Patrimonial                    
+------------------------------------------------------------
+  Seq  Descrição                                 Formato               Obrig  Utilização
+-----  ----------------------------------------  --------------------  -----  --------------------------------------------------
+   10  Nro Sequencial Bem                        9(08)                 Sim    Informar um código numérico que identifique o     
+                                                                              bem patrimonial. Poderá ser um número
+                                                                              sequencial simples, sendo que será utilizado
+                                                                              pelos demais arquivo importados para
+                                                                              relacionar as informações ao bem patrimonial.
+   20  Sequência Incorp                          9(08)                 Sim    Informar um código numérico único que             
+                                                                              identifique a incorporação do bem patrimonial.
+                                                                              Esta será válida para o bem patrimonial que
+                                                                              tenha a mesma numeração informada no campo
+                                                                              anterior a este (Nro Sequencial Bem).
+   30  Cenário Contábil                          x(8)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique o cenário contábil da
+                                                                              incorporação. Caso seja informado, deverá
+                                                                              estar cadastrado previamente dentro do EMS.
+                                                                              Quando não for informado, a incorporação será
+                                                                              válida para todos os cenários cujo o bem
+                                                                              patrimonial tem valores.
+   40  Tipo Incorporação                         x(20)                 Sim    Informar o tipo da incorporação que esta          
+                                                                              representando. Os valores que podem ser
+                                                                              assumidos são os seguintes: Adição,
+                                                                              Benfeitoria, Reavaliação e Difer Cambial
+   50  Data Incorporação                         99/99/9999            Sim    Informar a data a partir da qual a                
+                                                                              incorporação será válida. Observar que a data
+                                                                              deve ser maior ou igual a data de aquisição do
+                                                                              bem correlato.
+   60  Descrição Incorp                          x(40)                 Sim    Informar a descrição da incorporação do bem       
+                                                                              patrimonial.
+   70  Finalidade                                x(10)                 Sim    Informar um código alfa-numérico que              
+                                                                              identifique a finalidade econômica dos valores
+                                                                              a serem apresentados. A finalidade informada
+                                                                              deve estar cadastrada previamente dentro do
+                                                                              EMS.
+   80  Incentivo Fiscal                          x(8)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique o incentivo fiscal que diz
+                                                                              respeito a incorporação. Observar que quando
+                                                                              for informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS.
+   90  Fornecedor                                9(06)                 Não    Informar um código numérico que identifique o     
+                                                                              fornecedor do bem ou da incorporação
+                                                                              patrimonial. Observar que quando for
+                                                                              informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS.
+  100  Docto Entrada                             x(16)                 Não    Informar o código do documento de entrada que     
+                                                                              originou o bem patrimonial, devendo este,
+                                                                              quando informado, estar cadastrado previamente
+                                                                              dentro do EMS.
+  110  Numero Item                               9(06)                 Não    Informar o código numérico do item de             
+                                                                              documento de entrada que deu origem ao bem
+                                                                              patrimonial em questão. Se informado, deverá
+                                                                              estar cadastrado dentro do EMS.
+  120  Tipo Cálculo Reaval                       x(8)                  Não    Informar um código alfa-numérico que              
+                                                                              identifique o tipo de cálculo de reavaliação.
+                                                                              Tem o seu preenchimento obrigatório quando a
+                                                                              incorporação for do tipo reavaliação. Observar
+                                                                              que quando for informado, deverá estar
+                                                                              cadastrado anteriormente dentro do EMS.
+  130  Percentual Anual                          9(05),999             Não    Informar o percentual anual de depreciação da     
+                                                                              incorporação. (Caso a incorporação possa ser
+                                                                              depreciada).
+  140  Perc Anual Dpr Incen                      9(05),999             Não    Informar o percentual anual de depreciação        
+                                                                              incentivada da incorporação. (Caso a
+                                                                              incorporação possa ser depreciada).
+  150  Conta Patrimonial                         x(18)                 Não    Informar um código alfa-numérico que              
+                                                                              identificará a conta patrimonial do bem. Ex:
+                                                                              Móveis, Maquinas, etc. Esta conta patrimonial
+                                                                              já deve estar cadastrada no EMS.
+  160  Percentual Anual Redução Saldo            9(05),999             Não    Informar o percentual anual de depreciação        
+                                                                              pelo método Redução de Saldo. (Caso a
+                                                                              incorporação possa ser depreciada).
+  170  Valor Crédito PIS                         9(09),99              Não    Valor do Crédito de PIS - Esse valor deverá       
+                                                                              ser informado somente quando a quantidade de
+                                                                              parcelas para desconto de crédito PIS/COFINS,
+                                                                              for maior do que ZERO.
+  180  Valor Crédito COFINS                      9(09),99              Não    Valor do Crédito de COFINS - Esse valor deverá    
+                                                                              ser informado somente quando a quantidade de
+                                                                              parcelas para desconto de crédito PIS/COFINS,
+                                                                              for maior do que ZERO.
+  190  Bem Importado                             yes/no                Sim    Informar se a incorporação no bem é Importada     
+                                                                              ou não.
+  200  Credita PIS                               yes/no                Sim    Informar se o Bem credita PIS ou não.             
+  210  Credita COFINS                            yes/no                Sim    Informar se o Bem credita COFINS ou não.          
+  220  Nro Parcelas Crédito PIS/COFINS           9(02)                 Sim    Quando o desconto do Crédito de PIS/COFINS da     
+                                                                              incorporação deverá ser efetuado de forma
+                                                                              parcelada, deve-se informar a quantidade de
+                                                                              parcelas em que o desconto será efetuado.
+  230  Parcelas Descontadas                      9(02)                 Sim    Informar a quantidade de parcelas de Crédito      
+                                                                              PIS/COFINS já descontadas da incorporação.
+  240  Crédito CSLL                              yes/no                Sim    Informar se o bem Credita CSLL ou não.            
+  250  Exercícios Crédito CSLL                   9(02)                 Sim    Quando informado para creditar CSLL, favor        
+                                                                              informar os exercícios deste crédito.
+  260  Série Nota                                x(5)                  Não    Informar quando necessário, a série da Nota       
+                                                                              Fiscal que originou o bem.
+  270  Qtde Item Docto                           >>>>>>>>9             Não    Informar, quando necessário, a quantidade de      
+                                                                              itens de documento de entrada vinculada à
+                                                                              incorporação.
+  280  Valor Base PIS                            9(09),99              Não    Valor da Base de PIS - Esse valor deverá ser      
+                                                                              informado somente quando o bem credita PIS .
+  290  Valor Base COFINS                         9(09),99              Não    Valor da Base de COFINS - Esse valor deverá       
+                                                                              ser informado somente quando o bem credita
+                                                                              COFINS .
+
+----------------------------------------------------------------------------------------------------------- - DCF727ZB-  1.00.01.028
+--------------------------------------------------------------------------------------------------------------------- Página:      8
+DSM PRODUTOS NUTRICIONAIS BRASIL S.A.                                                                     Layout de Importação ASCII
+----------------------------------------------------------------------------------------------------------------- 23/01/2017 - 10:02
+
+Arquivo com Informações de Valores do Bem e Incorporação                        
+--------------------------------------------------------
+  Seq  Descrição                                 Formato               Obrig  Utilização
+-----  ----------------------------------------  --------------------  -----  --------------------------------------------------
+   10  Nro Sequencial Bem                        9(08)                 Sim    Informar um código numérico que identifique o     
+                                                                              bem patrimonial. Poderá ser um número
+                                                                              sequencial simples, sendo que será utilizado
+                                                                              pelos demais arquivo importados para
+                                                                              relacionar as informações ao bem patrimonial.
+   20  Sequência Incorp                          9(08)                 Não    Informar um código numérico único que             
+                                                                              identifique a incorporação do bem patrimonial.
+                                                                              Esta será válida para o bem patrimonial que
+                                                                              tenha a mesma numeração informada no campo
+                                                                              anterior a este (Nro Sequencial Bem).
+   30  Cenário Contábil                          x(8)                  Sim    Informar um código alfa-numérico que              
+                                                                              identifique o cenário contábil, o mesmo deverá
+                                                                              estar cadastrado previamente dentro do EMS.
+   40  Finalidade                                x(10)                 Sim    Informar um código alfa-numérico que              
+                                                                              identifique a finalidade econômica dos valores
+                                                                              a serem apresentados. A finalidade informada
+                                                                              deve estar cadastrada previamente dentro do
+                                                                              EMS.
+   50  Valor Original                            9(12),99              Sim    Informar o valor original do bem ou da            
+                                                                              incorporação, na finalidade informada, sendo
+                                                                              este convertido (valor presente, com as
+                                                                              conversões de moedas realizadas) e sem
+                                                                              correção monetária.
+   60  Correção Monetária                        9(12),99              Não    Informar o valor acumulado de correção            
+                                                                              monetária do bem ou da incorporação, na
+                                                                              finalidade informada.
+   70  Dpr Valor Original                        9(12),99              Não    Informar o valor de depreciação do valor          
+                                                                              original do bem ou da incorporação, na
+                                                                              finalidade informada, sendo este convertido
+                                                                              (valor presente, com as conversões de moedas
+                                                                              realizadas) e sem correção monetária.
+   80  Dpr Correção Monet                        9(12),99              Não    Informar o valor de depreciação da correção       
+                                                                              monetária do bem ou da incorporação, na
+                                                                              finalidade informada.
+   90  Correção Monet Dpr                        9(12),99              Não    Informar o valor da correção monetária da         
+                                                                              depreciação  do bem ou da incorporação, na
+                                                                              finalidade informada.
+  100  Depreciação Incentiv                      9(12),99              Não    Informar o valor de depreciação incentivada do    
+                                                                              valor original do bem ou da incorporação, na
+                                                                              finalidade informada, sendo este convertido
+                                                                              (valor presente, com as conversões de moedas
+                                                                              realizadas) e sem correção monetária.
+  110  Dpr Incentiv CM                           9(12),99              Não    Informar o valor de depreciação incentivada da    
+                                                                              correção monetária do bem ou da incorporação,
+                                                                              na finalidade informada.
+  120  CM Dpr Incentivada                        9(12),99              Não    Informar o valor da correção monetária da         
+                                                                              depreciação incentivada do bem ou da
+                                                                              incorporação, na finalidade informada.
+  130  Amortização VO                            9(12),99              Não    Informar o valor de amortização do valor          
+                                                                              original do bem ou da incorporação, na
+                                                                              finalidade informada, sendo este convertido
+                                                                              (valor presente, com as conversões de moedas
+                                                                              realizadas) e sem correção monetária.
+  140  Amortização CM                            9(12),99              Não    Informar o valor de amortização da correção       
+                                                                              monetária do bem ou da incorporação, na
+                                                                              finalidade informada.
+  150  CM Amortização                            9(12),99              Não    Informar o valor da correção monetária da         
+                                                                              amortização do bem ou da incorporação, na
+                                                                              finalidade informada.
+  160  Amortizacao Incentiv                      9(12),99              Não    Informar o valor de amortização incentivada do    
+                                                                              valor original do bem ou da incorporação, na
+                                                                              finalidade informada, sendo este convertido
+                                                                              (valor presente, com as conversões de moedas
+                                                                              realizadas) e sem correção monetária.
+  170  Amort Incentiv CM                         9(12),99              Não    Informar o valor de amortização incentivada da    
+                                                                              correção monetária do bem ou da incorporação,
+                                                                              na finalidade informada.
+  180  CM Amort Incentvda                        9(12),99              Não    Informar o valor da correção monetária da         
+                                                                              amortização incentivada do bem ou da
+                                                                              incorporação, na finalidade informada.
+  190  Percentual Dpr                            9(5),9999             Não    Informar a taxa anual de depreciação do bem       
+                                                                              patrimonial para a finalidade econômica do
+                                                                              registro. Caso este percentual não seja
+                                                                              informado, sera adotado o percentual de
+                                                                              depreciação da conta patrimonial.
+  200  Perc Dpr Incentivada                      9(5),9999             Não    Informar a taxa anual de depreciação              
+                                                                              incentivdada do bem patrimonial para a
+                                                                              finalidade econômica do registro. Caso este
+                                                                              percentual não seja informado, sera adotado o
+                                                                              percentual de depreciação incentivada da conta
+                                                                              patrimonial
+  210  Perc Dpr Redução Saldo                    9(05),9999            Não    Informar a taxa anual da Redução Saldo do Bem     
+                                                                              Patrimonial para a finalidade econômica do
+                                                                              registro. Caso este percentual não seja
+                                                                              informado, será adotado o percentual
+                                                                              cadastrado na Conta Patrimonial.
+  220  Quantidade Vida Útil                      9(7),99               Não    Informar um valor para a vida útil em             
+                                                                              quantidade ou horas de serviço para a
+                                                                              finalidade econômica do registro. Caso este
+                                                                              valor não seja informado, será adotado o valor
+                                                                              de vida útil (unidades) da conta patrimonial.
+
+
+Arquivo com Informações de Alocações do Bem Patrimonial                         
+-------------------------------------------------------
+  Seq  Descrição                                 Formato               Obrig  Utilização
+-----  ----------------------------------------  --------------------  -----  --------------------------------------------------
+   10  Nro Sequencial Bem                        9(08)                 Sim    Informar um código numérico que identifique o     
+                                                                              bem patrimonial. Poderá ser um número
+                                                                              sequencial simples, sendo que será utilizado
+                                                                              pelos demais arquivo importados para
+                                                                              relacionar as informações ao bem patrimonial.
+   20  Plano Centros Custo                       x(8)                  Sim    Informar um código alfa-numérico que              
+                                                                              identifique o plano de custo que o bem
+                                                                              patrimonial está alocado. Observar que quando
+                                                                              for informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS.
+   30  Centro Custo                              x(20)                 Sim    Informar um código alfa-numérico que              
+                                                                              identifique o centro de custo que o bem
+                                                                              patrimonial está alocado. Observar que quando
+                                                                              for informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS.
+   40  Unid Negócio                              x(3)                  Sim    Informar um código alfa-numérico que              
+                                                                              identifique a unidade de negócio que o bem
+                                                                              patrimonial está alocado. Observar que quando
+                                                                              for informado, deverá estar cadastrado
+                                                                              anteriormente dentro do EMS.
+   50  Perc Apropriação                          9(06),9999            Sim    Informar um valor numérico que identifique o      
+                                                                              percentual de apropriação do bem patrimonial
+                                                                              ao centro de custo e a unidade de negócio
+                                                                              informados no registro atual de alocações.
+   60  CCusto/UN Principal                       yes/no                Sim    Informar YES quando o centro de custo e a         
+                                                                              unidade de negócio são os responsáveis pelo
+                                                                              bem patrimonial. Desta forma, apenas poderá
+                                                                              existir uma única alocação. As alocações com
+                                                                              valor NO, devem conter percentuais de alocação
+                                                                              informados, para que seja feito o rateio para
+                                                                              os centros de custo e unidades de negócio.
+                                                                              Para cada bem deve haver uma alocação
+                                                                              principal (YES), sendo obrigatório existir
+                                                                              pelo menos uma.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------- - DCF727ZB-  1.00.01.028
+--------------------------------------------------------------------------------------------------------------------- Página:     11
+DSM PRODUTOS NUTRICIONAIS BRASIL S.A.                                                                     Layout de Importação ASCII
+----------------------------------------------------------------------------------------------------------------- 23/01/2017 - 10:02
+
+Arquivo com Informações do Residual Mínimo para Bens e Incorporações            
+--------------------------------------------------------------------
+  Seq  Descrição                                 Formato               Obrig  Utilização
+-----  ----------------------------------------  --------------------  -----  --------------------------------------------------
+   10  Nro Sequencial Bem                        9(08)                 Sim    Informar um código numérico que identifique o     
+                                                                              bem patrimonial. Poderá ser um número
+                                                                              sequencial simples, sendo que será utilizado
+                                                                              pelos demais arquivo importados para
+                                                                              relacionar as informações ao bem patrimonial.
+   20  Sequência Incorp                          9(08)                 Sim    Informar o código numérico que identifique a      
+                                                                              incorporação do bem patrimonial. Quando o
+                                                                              valor residual for referente ao bem principal,
+                                                                              informar então sequência 0 (zero).
+   30  Tipo Cálculo                              x(7)                  Sim    Informar o código do Tipo de Cálculo do valor     
+                                                                              residual.
+   40  Cenário Contábil                          x(8)                  Sim    Informar o Cenário Contábil do valor residual.    
+   50  Finalidade Econômica                      x(10)                 Sim    Informar a Finalidade Econômica do valor          
+                                                                              residual.
+   60  Residual Mínimo                           9(12),99              Sim    Informar o Valor Residual Mínimo para o           
+                                                                              bem/incorporação.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------- - DCF727ZB-  1.00.01.028
+--------------------------------------------------------------------------------------------------------------------- Página:     12
+DSM PRODUTOS NUTRICIONAIS BRASIL S.A.                                                                     Layout de Importação ASCII
+----------------------------------------------------------------------------------------------------------------- 23/01/2017 - 10:02
+
+Observações
+--------------------------------------------------------------------------------------------------------------
+
+1 - Deve-se utilizar o <enter> como delimitador entre os registros.                                           
+2 - Deve-se utilizar espaço em branco para delimitar um campo do outro.                                       
+3 - Os atributos decimais devem ser informados com vírgula.                                                   
+4 - Os atributos alfanuméricos devem ser informados entre aspas.                                              
+5 - Os atributos datas devem ser informados com as barras (99/99/9999) e as datas desconhecidas com ?.        
+6 - Poderam ser informados valores negativos para o bem Patrimonial e incorporação patrimonial.
+
+Observações
+--------------------------------------------------------------------------------------------------------------
+
+Exemplos
+----------------------------------------------------------------------------------------------------------------------------------
+- Exemplo de Arquivo com Informações dos Bens Patrimoniais.                                                                       
+1 '1' '1312102x' 017848 0 'MESA DE CRISTAL' '017848' 1 'Quadrimestral' 01/08/1979 '01' '02004' '' '' '' '' 'BOM' '' '' 0 '01001'  
+'' 31/12/2000 'MESA DE CRISTAL C/LATERAIS' '' '' ? ? 0 '' '' ? ? 0 '' '' ? ? 0 '' 0 0 ? ? '' '' ? 0 ? ? ''                        
+2 '1' '1312102x' 017848 1 'MESA DE CRISTAL' '017848' 1 'Quadrimestral' 01/08/1979 '01' '02004' '' '' '' '' 'BOM' '' '' 0 '01001'  
+'' 31/12/2000 'MESA DE CRISTAL C/LATERAIS' '' '' ? ? 0 '' '' ? ? 0 '' '' ? ? 0 '' 0 0 ? ? '' '' ? 0 ? ? ''
+                       
+- Exemplo de Arquivo com Informações das Incorporações.                                                                           
+1 1 'FISCAL' 'Benfeitoria' 01/01/2001 'Incorporação de Benfeitoria'  'CORRENTE' '' 1 '' 1 '' 0 0 '' 0                             
+2 1 "FISCAL" "Benfeitoria" 01/01/2001 "Incorporação de Benfeitoria"  "CORRENTE" "" 1 "" 1 "" 0 0 "" 0
+                            
+- Exemplo de Arquivo com Informações de Valores.                                                                                  
+1 0 'FISCAL' 'CORRENTE  ' 1,0000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2 0 'FISCAL' 'CORRENTE  ' 1,0000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+- Exemplo de Arquivo com Informações de Alocações.                                                                                
+00000001 'PCCUSTO1' 'DA01' 'GPC' 000100,0000 YES
+00000002 'PCCUSTO1' 'DA01' 'GPC' 000100,0000 YES
+                                
+- Exemplo de Arquivo com Informações do Residual Mínimo para Bens/Incorp.                                                         
+1 0 'DPFIS95' 'FISCAL' 'Corrente' 100
+2 1 'DPFIS95' 'FISCAL' 'Corrente' 250
