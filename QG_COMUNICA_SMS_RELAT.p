@@ -20,8 +20,8 @@ PUT "data-envio"    ";"
 
 lMessageSent = YES.
 
-FOR EACH es-comunica-cliente-envio WHERE es-comunica-cliente-envio.data-envio >= 12/01/2016
-                                     AND es-comunica-cliente-envio.data-envio <= 12/31/2016
+FOR EACH es-comunica-cliente-envio WHERE es-comunica-cliente-envio.data-envio >= 01/01/2017
+                                     AND es-comunica-cliente-envio.data-envio <= 01/31/2017
                                      AND (es-comunica-cliente-envio.tipo = "SMS" OR es-comunica-cliente-envio.tipo = "SMS_COBRANCA")
                                      NO-LOCK:
 
