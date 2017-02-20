@@ -1,10 +1,10 @@
 /* Alterar CST Faturamento */
 
-FIND FIRST it-nota-fisc WHERE it-nota-fisc.nr-nota-fis = "0068456"
-                          AND it-nota-fisc.cod-estabel = "26"
+FIND FIRST it-nota-fisc WHERE it-nota-fisc.nr-nota-fis = "0036738"
+                          AND it-nota-fisc.cod-estabel = "24"
                           AND it-nota-fisc.serie       = "3"
-                          AND it-nota-fisc.it-codigo   = "40013029"
-                          AND it-nota-fisc.nr-seq-fat  = 70.
+                          AND it-nota-fisc.it-codigo   = "59217261"
+                          AND it-nota-fisc.nr-seq-fat  = 10.
 
 DISP it-nota-fisc.nr-nota-fis               LABEL "Nr Nota"
      it-nota-fisc.cod-estabel               LABEL "Estabelecimento"

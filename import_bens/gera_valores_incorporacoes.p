@@ -117,29 +117,28 @@
     FOR EACH tt-val-incorp NO-LOCK WHERE tt-val-incorp.cCenarioContabil <> '':
             
         PUT UNFORM
-            tt-val-incorp.iNrSeqItem            ' '
-            tt-val-incorp.iSeqIncorp            ' '
-            "'" tt-val-incorp.cCenarioContabil "'"     ' '
-            "'" tt-val-incorp.cFinalidade      "'"     ' '
-            STRING(tt-val-incorp.deValorOriginal,"->>,>>9.9999")       ' '            
-            tt-val-incorp.deCorrecaoMonetaria   ' '
-            tt-val-incorp.deDprValorOriginal    ' '
-            tt-val-incorp.deDprCorrecMonet      ' '
-            tt-val-incorp.deCorrecMonetDpr      ' '
-            tt-val-incorp.deDeprecIncentiv      ' '
-            tt-val-incorp.deDprIncentivCM       ' '
-            tt-val-incorp.deCMDprIncentivada    ' '
-            tt-val-incorp.deAmortizacaoVO       ' '
-            tt-val-incorp.deAmortizacaoCM       ' '
-            tt-val-incorp.deCMAmortizacao       ' '
-            tt-val-incorp.deAmortizacaoIncent   ' '
-            tt-val-incorp.deAmortizacaoIncentCM ' '
-            tt-val-incorp.deCMAmortIncentivada  ' '
-            tt-val-incorp.dePercentualDpr       ' '
-            tt-val-incorp.dePercDprIncentivada  ' '
-            tt-val-incorp.dePercDprReducaoSaldo ' '
-            tt-val-incorp.deQuantVidaUtil
-            SKIP.
+            tt-val-incorp.iNrSeqItem                            " "
+            tt-val-incorp.iSeqIncorp                            " "
+            '"' tt-val-incorp.cCenarioContabil '"'              " "
+            '"' tt-val-incorp.cFinalidade      '"'              " "
+            STRING(tt-val-incorp.deValorOriginal,"->>>>9.9999") " "
+            tt-val-incorp.deCorrecaoMonetaria                   " "
+            tt-val-incorp.deDprValorOriginal                    " "
+            tt-val-incorp.deDprCorrecMonet                      " "
+            tt-val-incorp.deCorrecMonetDpr                      " "
+            tt-val-incorp.deDeprecIncentiv                      " "
+            tt-val-incorp.deDprIncentivCM                       " "
+            tt-val-incorp.deCMDprIncentivada                    " "
+            tt-val-incorp.deAmortizacaoVO                       " "
+            tt-val-incorp.deAmortizacaoCM                       " "
+            tt-val-incorp.deCMAmortizacao                       " "
+            tt-val-incorp.deAmortizacaoIncent                   " "
+            tt-val-incorp.deAmortizacaoIncentCM                 " "
+            tt-val-incorp.deCMAmortIncentivada                  " "
+            tt-val-incorp.dePercentualDpr                       " "
+            tt-val-incorp.dePercDprIncentivada                  " "
+            tt-val-incorp.dePercDprReducaoSaldo                 " "
+            tt-val-incorp.deQuantVidaUtil                       CHR(10).
 
     END.
 

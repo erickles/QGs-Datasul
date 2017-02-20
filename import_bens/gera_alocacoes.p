@@ -1,5 +1,5 @@
     
-    {H:\import_bens\i-variaveis-alocacoes.i}    
+    {H:\import_bens\i-variaveis-alocacoes.i}
 
     DEFINE VARIABLE cInput          AS CHARACTER   NO-UNDO.
     DEFINE VARIABLE iNroSequencial  AS INTEGER     NO-UNDO.
@@ -99,12 +99,12 @@
     FOR EACH tt-alocacoes NO-LOCK WHERE tt-alocacoes.cPlanoCentrosCusto <> '':
 
         PUT UNFORM
-                tt-alocacoes.iNrSeqItem                     ' '
-            "'" tt-alocacoes.cPlanoCentrosCusto   "'" ' '
-            "'" tt-alocacoes.cCentroCusto         "'" ' '
-            "'" tt-alocacoes.cUnidNegocio               "'" ' '
-                tt-alocacoes.dePercApropriacao              ' '
-                CAPS(STRING(tt-alocacoes.lCcustoUnPrincipal)) SKIP.
+                tt-alocacoes.iNrSeqItem                             " "
+            '"' tt-alocacoes.cPlanoCentrosCusto                 '"' " "
+            '"' tt-alocacoes.cCentroCusto                       '"' " "
+            '"' tt-alocacoes.cUnidNegocio                       '"' " "
+                tt-alocacoes.dePercApropriacao                      " "
+                CAPS(STRING(tt-alocacoes.lCcustoUnPrincipal))   CHR(10).
     END.
 
     OUTPUT CLOSE.
