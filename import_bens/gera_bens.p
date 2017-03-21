@@ -7,7 +7,7 @@
 
     /*cInput = "H:\import_bens\MQ_ADM.csv".*/
     /*cInput = "H:\import_bens\contabil.csv".*/
-    cInput = "C:\Users\ess55813\Documents\GitHub\QGs-Datasul\import_bens\LAYOUT_GOIANIA_FINAL_11_16.csv".
+    cInput = "C:\Users\ess55813\Documents\GitHub\QGs-Datasul\import_bens\LAYOUT_PECEM_FINAL_11_16.csv".
 
     /* 
         1 '1' '1312102x' 017848 0 'MESA DE CRISTAL' '017848' 1 'Quadrimestral' 01/08/1979 '01' '02004' '' '' '' '' 'BOM' '' '' 0 '01001' '' 31/12/2000 'MESA DE CRISTAL C/LATERAIS' '' '' ? ? 0 '' '' ? ? 0 '' '' ? ? 0 '' 0 0 ? ? '' '' ? 0 ? ? ''
@@ -107,7 +107,9 @@
                    bem_pat.cod_marca            = TRIM(tt-planilha.col_12)
                    bem_pat.cod_modelo           = TRIM(tt-planilha.col_13)
                    bem_pat.cod_localiz          = TRIM(tt-planilha.col_8)
-                   bem_pat.cb3_ident_visual     = TRIM(tt-planilha.col_7).
+                   bem_pat.cb3_ident_visual     = TRIM(tt-planilha.col_7)
+                   bem_pat.cod_licenc_uso       = TRIM(tt-planilha.col_14)
+                   bem_pat.cod_especif_tec      = TRIM(tt-planilha.col_15).
             
         END.
 

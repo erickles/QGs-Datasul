@@ -7,30 +7,31 @@ PUT "dt-emis-nota;"
     "nr-nota-fis;"
     "serie;"
     "valor;"
+    "parcela;"
     "No acr?;"
     "Cancelada?"
     SKIP.
 
 DEFINE VARIABLE iCont AS INTEGER     NO-UNDO.
 
-FOR EACH nota-fiscal 
-   WHERE nota-fiscal.dt-atual-cr  = ?
-     AND nota-fiscal.emite-duplic = YES
+FOR EACH nota-fiscal
+   WHERE /*nota-fiscal.dt-atual-cr  = ?
+     AND*/ nota-fiscal.emite-duplic = YES
      AND nota-fiscal.dt-canc = ?
-     AND nota-fiscal.dt-emis-nota >= 01/01/2017
-     AND nota-fiscal.dt-emis-nota <= 01/31/2017:
-            
+     AND nota-fiscal.dt-emis-nota >= 02/20/2017
+     AND nota-fiscal.dt-emis-nota <= 02/28/2017:
+    
     FIND FIRST tit_acr WHERE tit_acr.cod_estab       = nota-fiscal.cod-estabel 
                          AND tit_acr.cod_ser_docto   = nota-fiscal.serie
                          AND tit_acr.cod_espec_docto = "DP"
                          AND tit_acr.cod_tit_acr     = nota-fiscal.nr-nota-fis
                          AND tit_acr.cdn_cliente     = nota-fiscal.cod-emitente
                          NO-LOCK NO-ERROR.
-
+    
+    
     IF NOT AVAIL tit_acr THEN DO:
         
         /*nota-fiscal.dt-atual-cr = ?.*/
-        
         
         PUT nota-fiscal.dt-emis-nota                            ";"
             nota-fiscal.dt-atual-cr                             ";"
@@ -42,7 +43,9 @@ FOR EACH nota-fiscal
             IF AVAIL tit_acr THEN "Sim" ELSE "Nao"              ";"
             IF nota-fiscal.dt-canc = ? THEN "Nao" ELSE "Sim"    SKIP.
         
-    END.        
+    END.
+    
+    /*
     IF AVAIL tit_acr THEN DO:
         iCont = iCont + 1.
         
@@ -53,13 +56,16 @@ FOR EACH nota-fiscal
             nota-fiscal.nr-nota-fis                             ";"
             nota-fiscal.serie                                   ";"
             nota-fiscal.vl-tot-nota                             ";"
+            tit_acr.cod_parcela                                 ";"
             IF AVAIL tit_acr THEN "Sim" ELSE "Nao"              ";"
             IF nota-fiscal.dt-canc = ? THEN "Nao" ELSE "Sim"    SKIP.
           
-        ASSIGN nota-fiscal.dt-atual-cr = tit_acr.dat_emis_docto.
+        /*ASSIGN nota-fiscal.dt-atual-cr = tit_acr.dat_emis_docto.*/
     END.
-    
+    */
 END.
+
 MESSAGE iCont
-    VIEW-AS ALERT-BOX INFO BUTTONS OK.
+        VIEW-AS ALERT-BOX INFO BUTTONS OK.
+
 OUTPUT CLOSE.

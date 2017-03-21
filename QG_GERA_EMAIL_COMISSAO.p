@@ -160,30 +160,36 @@ PROCEDURE pi-mail-repres:
                 END.
                 
                 INPUT CLOSE.
-    
-                FIND LAST bf-envia-email USE-INDEX chSeq NO-LOCK NO-ERROR.                    
-                iSequencia = bf-envia-email.sequencia + 1.
                 
-                FIND FIRST es-envia-email WHERE es-envia-email.chave-acesso = cChave NO-ERROR.
-                IF NOT AVAIL es-envia-email THEN DO:
+                DO TRANS:
+                
+                    FIND LAST bf-envia-email USE-INDEX chSeq NO-LOCK NO-ERROR.                    
+                    iSequencia = bf-envia-email.sequencia + 1.
                     
-                    CREATE es-envia-email.
-                    ASSIGN es-envia-email.codigo-acesso = "COMISSAO"
-                           es-envia-email.chave-acesso  = cChave
-                           es-envia-email.sequencia     = iSequencia
-                           es-envia-email.de            = /* Rubens Souza - 19/05/16 "naoresponda@dsm.com" */ c-endereco
-                           es-envia-email.para          = emsuni.pessoa_fisic.cod_e_mail
-                           es-envia-email.assunto       = "Programaá∆o de pagamento de comiss∆o"
-                           es-envia-email.texto         = cMensagem
-                           es-envia-email.situacao      = 1
-                           es-envia-email.dt-incl       = TODAY
-                           es-envia-email.hr-incl       = STRING(TIME,"HH:MM:SS")
-                           es-envia-email.dt-env        = ?
-                           es-envia-email.hr-env        = ?
-                           es-envia-email.erro          = ""
-                           es-envia-email.u-char-1      = "".
+                    FIND FIRST es-envia-email WHERE es-envia-email.chave-acesso = cChave NO-ERROR.
+                    IF NOT AVAIL es-envia-email THEN DO:
+                        
+                        CREATE es-envia-email NO-ERROR.
+                        ASSIGN es-envia-email.codigo-acesso = "COMISSAO"
+                               es-envia-email.chave-acesso  = cChave
+                               es-envia-email.sequencia     = iSequencia
+                               es-envia-email.de            = /* Rubens Souza - 19/05/16 "naoresponda@dsm.com" */ c-endereco
+                               es-envia-email.para          = emsuni.pessoa_fisic.cod_e_mail
+                               es-envia-email.assunto       = "Programaá∆o de pagamento de comiss∆o"
+                               es-envia-email.texto         = cMensagem
+                               es-envia-email.situacao      = 1
+                               es-envia-email.dt-incl       = TODAY
+                               es-envia-email.hr-incl       = STRING(TIME,"HH:MM:SS")
+                               es-envia-email.dt-env        = ?
+                               es-envia-email.hr-env        = ?
+                               es-envia-email.erro          = ""
+                               es-envia-email.u-char-1      = "" NO-ERROR.
+    
+                        RELEASE es-envia-email.
 
-                    RELEASE es-envia-email.
+                        IF NOT ERROR-STATUS:ERROR THEN LEAVE.
+    
+                    END.
 
                 END.
             /*END.*/
