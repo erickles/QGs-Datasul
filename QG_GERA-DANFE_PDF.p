@@ -4,57 +4,55 @@ DEFINE TEMP-TABLE tt-raw-digita
     FIELD raw-digita AS RAW.
 
 DEF TEMP-TABLE tt-param-aux
-    FIELD destino              AS INTEGER
-    FIELD destino-bloq         AS INTEGER
-    FIELD arquivo              AS CHARACTER
-    FIELD arquivo-bloq         AS CHARACTER
-    FIELD usuario              AS CHARACTER
-    FIELD data-exec            AS DATE
-    FIELD hora-exec            AS INTEGER
-    FIELD parametro            AS LOGICAL
-    FIELD formato              AS INTEGER
-    FIELD cod-layout           AS CHARACTER
-    FIELD des-layout           AS CHARACTER
-    FIELD log-impr-dados       AS LOGICAL  
-    FIELD v_num_tip_aces_usuar AS INTEGER
-&IF "{&mguni_version}" >= "2.071" &THEN
-    FIELD ep-codigo            LIKE empresa.ep-codigo
-&ELSE
-    FIELD ep-codigo            AS INTEGER
-&ENDIF
-    FIELD c-cod-estabel        LIKE nota-fiscal.cod-estabel
-    FIELD c-serie              LIKE nota-fiscal.serie
-    FIELD c-nr-nota-fis-ini    LIKE nota-fiscal.nr-nota-fis
-    FIELD c-nr-nota-fis-fim    LIKE nota-fiscal.nr-nota-fis
-    FIELD i-cdd-embarq-ini    LIKE nota-fiscal.cdd-embarq
-    FIELD i-cdd-embarq-fim    LIKE nota-fiscal.cdd-embarq
-    FIELD da-dt-saida          LIKE nota-fiscal.dt-saida
-    FIELD c-hr-saida           LIKE nota-fiscal.hr-confirma
-    FIELD banco                AS INTEGER
-    FIELD cod-febraban         AS INTEGER      
-    FIELD cod-portador         AS INTEGER      
-    FIELD prox-bloq            AS CHARACTER         
-    FIELD c-instrucao          AS CHARACTER EXTENT 5
-    FIELD imprime-bloq         AS LOGICAL
-    FIELD rs-imprime           AS INTEGER
-    FIELD impressora-so        AS CHARACTER
-    FIELD impressora-so-bloq   AS CHARACTER
-    FIELD nr-copias            AS INTEGER.
+    FIELD destino               AS INTEGER
+    FIELD destino-bloq          AS INTEGER
+    FIELD arquivo               AS CHARACTER
+    FIELD arquivo-bloq          AS CHARACTER
+    FIELD usuario               AS CHARACTER
+    FIELD data-exec             AS DATE
+    FIELD hora-exec             AS INTEGER
+    FIELD parametro             AS LOGICAL
+    FIELD formato               AS INTEGER
+    FIELD cod-layout            AS CHARACTER
+    FIELD des-layout            AS CHARACTER
+    FIELD log-impr-dados        AS LOGICAL  
+    FIELD v_num_tip_aces_usuar  AS INTEGER
+    FIELD ep-codigo             LIKE empresa.ep-codigo
+    FIELD c-cod-estabel         LIKE nota-fiscal.cod-estabel
+    FIELD c-serie               LIKE nota-fiscal.serie
+    FIELD c-nr-nota-fis-ini     LIKE nota-fiscal.nr-nota-fis
+    FIELD c-nr-nota-fis-fim     LIKE nota-fiscal.nr-nota-fis
+    FIELD i-cdd-embarq-ini      LIKE nota-fiscal.cdd-embarq
+    FIELD i-cdd-embarq-fim      LIKE nota-fiscal.cdd-embarq
+    FIELD da-dt-saida           LIKE nota-fiscal.dt-saida
+    FIELD c-hr-saida            LIKE nota-fiscal.hr-confirma
+    FIELD banco                 AS INTEGER
+    FIELD cod-febraban          AS INTEGER      
+    FIELD cod-portador          AS INTEGER      
+    FIELD prox-bloq             AS CHARACTER         
+    FIELD c-instrucao           AS CHARACTER EXTENT 5
+    FIELD imprime-bloq          AS LOGICAL
+    FIELD rs-imprime            AS INTEGER
+    FIELD impressora-so         AS CHARACTER
+    FIELD impressora-so-bloq    AS CHARACTER
+    FIELD nr-copias             AS INTEGER.
 
-define temp-table tt-log-danfe-xml NO-UNDO
-    field seq           as int
-    field c-nr-nota-xml as character
-    field c-chave-xml   as character.
+DEFINE TEMP-TABLE tt-log-danfe-xml NO-UNDO
+    FIELD seq           AS INTE
+    FIELD c-nr-nota-xml AS CHARACTER
+    FIELD c-chave-xml   AS CHARACTER.
 
 DEFINE NEW SHARED TEMP-TABLE tt-notas-impressas
     FIELD r-nota AS ROWID.
 
 DEFINE VARIABLE rawParam        AS RAW         NO-UNDO.
 
-FIND FIRST nota-fiscal WHERE nota-fiscal.nr-nota-fis = "0062813"
-                         AND nota-fiscal.cod-estabel = "09"
-                         AND nota-fiscal.serie       = "2"
-                         NO-LOCK NO-ERROR.   
+FIND FIRST nota-fiscal WHERE nota-fiscal.nr-nota-fis = "0002567"
+                         AND nota-fiscal.cod-estabel = "23"
+                         AND nota-fiscal.serie       = "1"
+                         NO-LOCK NO-ERROR.
+
+IF AVAIL nota-fiscal THEN DO:
 
     CREATE tt-param-aux.
     ASSIGN tt-param-aux.destino           = 4
@@ -74,11 +72,10 @@ FIND FIRST nota-fiscal WHERE nota-fiscal.nr-nota-fis = "0062813"
                                             nota-fiscal.nr-nota-fis + ".doc".
 
     RAW-TRANSFER tt-param-aux TO rawParam.
-
-    IF AVAIL nota-fiscal THEN DO:
+    MESSAGE SUBSTR(nota-fiscal.char-2,65,2)
+        VIEW-AS ALERT-BOX INFO BUTTONS OK.
+    RUN V:\ftp\esft0518rp.p (INPUT rawParam,
+                          INPUT TABLE tt-raw-digita,
+                          INPUT "CLIENT").
         
-        RUN H:\ftp\esft0518rp.p (INPUT rawParam,
-                                 INPUT TABLE tt-raw-digita,
-                                 INPUT "C:\Datasul").
-        
-    END.
+END.

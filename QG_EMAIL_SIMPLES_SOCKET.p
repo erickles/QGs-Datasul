@@ -12,12 +12,12 @@ vSmtpServer = c-servidor.
 DEFINE VARIABLE vTo         AS CHARACTER NO-UNDO
                                FORMAT "X(50)"
                                LABEL "To" 
-                               INITIAL "erick.souza@tortuga.com.br".
+                               INITIAL "erick.souza@dsm.com".
 
 DEFINE VARIABLE vFrom       AS CHARACTER NO-UNDO
                                FORMAT "X(50)"
                                LABEL "From" 
-                               INITIAL "erick.souza@tortuga.com.br".
+                               INITIAL "sac.tortuga@dsm.com".
 
 DEFINE VARIABLE vSubject    AS CHARACTER NO-UNDO
                                FORMAT "X(50)"

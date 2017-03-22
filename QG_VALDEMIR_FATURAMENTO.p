@@ -19,8 +19,8 @@ PUT "Mes"               ";"
 
 FOR EACH nota-fiscal WHERE /*nota-fiscal.cod-estabel = "22"
                        AND*/ /*nota-fiscal.emite-duplic = YES
-                       AND*/ nota-fiscal.dt-emis >= 08/01/2015
-                       AND nota-fiscal.dt-emis <= 08/31/2016
+                       AND*/ nota-fiscal.dt-emis >= 02/28/2017
+                       AND nota-fiscal.dt-emis <= 02/28/2017
                        AND nota-fiscal.dt-canc = ?
                        NO-LOCK:
     

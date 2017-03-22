@@ -32,7 +32,7 @@ DEFINE TEMP-TABLE tt-val-incorp
     FIELD iNrSeqItem            AS INTEGER      FORMAT 99999999
     FIELD cCenarioContabil      AS CHARACTER    FORMAT "x(8)"
     FIELD cFinalidade           AS CHARACTER    FORMAT "x(10)"
-    FIELD deValorOriginal       AS DECIMAL      FORMAT "->>,>>9.9999"
+    FIELD deValorOriginal       AS DECIMAL      FORMAT "->>>>9.9999"
     FIELD iSeqIncorp            AS INTEGER      FORMAT 99999999
     FIELD deCorrecaoMonetaria   AS DECIMAL      FORMAT "->>,>>9.99"
     FIELD deDprValorOriginal    AS DECIMAL      FORMAT "->>,>>9.99"
