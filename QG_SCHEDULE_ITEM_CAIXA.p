@@ -1,5 +1,5 @@
 
-FIND FIRST ITEM-caixa WHERE ITEM-caixa.it-codigo = "44095340" NO-LOCK NO-ERROR.
+FIND FIRST ITEM-caixa WHERE ITEM-caixa.it-codigo = "59217765" NO-LOCK NO-ERROR.
 
 /* ESS - Criacao da es-schedule */
 CREATE es-schedule.

@@ -136,13 +136,13 @@ REPEAT:
                     VIEW-AS ALERT-BOX INFO BUTTONS OK.                        
         END.
         ELSE 
-            MESSAGE "Conectou"
+            MESSAGE "Conectou 1"
                     VIEW-AS ALERT-BOX INFO BUTTONS OK.
         
         /* Criptografa arquivo */
-        RUN \\srvvm17t\totvs\Biblioteca\TOTVS\ATUALIZACAO\esp\esapiCript.p ON SERVER hAppSrv (INPUT "\\srvvm01\usuarios$\ess55813\DIRETORIO\ESCRITURAL\TOR\COB\ITAU\REM\16121397.REM",
-                                                                                    INPUT "E:\ESCRITURAL\TOR\COB\ITAU\REM\16121397.REM",
-                                                                                    INPUT cChave).
+        RUN esp\esapiCript.p ON SERVER hAppSrv (INPUT "\\srvvm01\usuarios$\ess55813\DIRETORIO\ESCRITURAL\TOR\COB\ITAU\REM\Itau_REM_20170704.REM",
+                                                INPUT "E:\ESCRITURAL\TOR\COB\ITAU\REM\Itau_REM_20170704.REM",
+                                                INPUT cChave).
         
         ASSIGN lApp = fDesconectaAppServer().
 
@@ -165,9 +165,9 @@ REPEAT:
         END.
 
         /* Criptografa arquivo */
-        RUN \\srvvm17t\totvs\Biblioteca\TOTVS\ATUALIZACAO\esp\esapiCript.p ON SERVER hAppSrv (INPUT "\\srvvm01\usuarios$\ess55813\DIRETORIO\ESCRITURAL\TOR\COB\ITAU\REM\16121397.REM",
-                                                                                    INPUT "E:\ESCRITURAL\TOR\COB\ITAU\REM\16121397.REM",
-                                                                                    INPUT cChave).
+        RUN esp\esapiCript.p ON SERVER hAppSrv (INPUT "\\srvvm01\usuarios$\ess55813\DIRETORIO\ESCRITURAL\TOR\COB\ITAU\REM\Itau_REM_20170704.REM",
+                                                INPUT "E:\ESCRITURAL\TOR\COB\ITAU\REM\Itau_REM_20170704.REM",
+                                                INPUT cChave).
 
         ASSIGN lApp = fDesconectaAppServer().
     END.

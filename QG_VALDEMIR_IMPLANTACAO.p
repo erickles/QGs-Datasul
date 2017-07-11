@@ -9,8 +9,8 @@ PUT "Pedido"        ";"
     /*"Quantidade"    ";"*/
     "Via Mobile?"   SKIP.
 
-FOR EACH ws-p-venda WHERE ws-p-venda.dt-implant     >= 08/01/2015
-                      AND ws-p-venda.dt-implant     <= 08/31/2016
+FOR EACH ws-p-venda WHERE ws-p-venda.dt-implant     >= 01/01/2016
+                      AND ws-p-venda.dt-implant     <= 12/31/2016
                       AND (ws-p-venda.cod-tipo-oper  = 1 OR ws-p-venda.cod-tipo-oper  = 2)
                       AND INDEX(ws-p-venda.nr-pedcli,"/") = 0
                       NO-LOCK BY ws-p-venda.dt-implant:
