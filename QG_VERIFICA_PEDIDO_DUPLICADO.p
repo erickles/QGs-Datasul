@@ -11,7 +11,7 @@ PUT "Pedido Original"   ";"
     "Valor dos pedidos" ";"
     SKIP.
 
-FOR EACH ws-p-venda WHERE ws-p-venda.dt-impl >= 11/21/2016 NO-LOCK
+FOR EACH ws-p-venda WHERE ws-p-venda.dt-impl >= 01/01/2017 NO-LOCK
         BREAK BY ws-p-venda.nome-abrev:
     FOR EACH bf-p-venda WHERE bf-p-venda.nome-abrev <>  ws-p-venda.nome-abrev
                           AND bf-p-venda.dt-impl    =  ws-p-venda.dt-impl

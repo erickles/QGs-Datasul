@@ -2,7 +2,7 @@ DEFINE VARIABLE iCont       AS INTEGER     NO-UNDO.
 DEFINE VARIABLE cRetorno    AS CHARACTER   NO-UNDO.
 DEFINE VARIABLE lMessageSent AS LOGICAL     NO-UNDO.
 
-OUTPUT TO "C:\Temp\comunica_012017.csv".
+OUTPUT TO "C:\Temp\comunica_052017.csv".
 
 PUT "data-envio"    ";" 
     "hora-envio"    ";" 
@@ -20,8 +20,8 @@ PUT "data-envio"    ";"
 
 lMessageSent = YES.
 
-FOR EACH es-comunica-cliente-envio WHERE es-comunica-cliente-envio.data-envio >= 01/01/2017
-                                     AND es-comunica-cliente-envio.data-envio <= 01/31/2017
+FOR EACH es-comunica-cliente-envio WHERE es-comunica-cliente-envio.data-envio >= 05/01/2017
+                                     AND es-comunica-cliente-envio.data-envio <= 05/31/2017
                                      AND (es-comunica-cliente-envio.tipo = "SMS" OR es-comunica-cliente-envio.tipo = "SMS_COBRANCA")
                                      NO-LOCK:
 

@@ -21,3 +21,12 @@ UPDATE c-seg-usuario.
 /*  mmd18802        -   Marcelo Mazarelo      */
 /*  lfb41289        -   Luiz Biacchi          */
 /*  fln28716        -   Francisco de Lima Neco*/
+/*  pam12345        -   Paulo Mota            */
+/*  425260          -   Rogeria Aliberti      */
+/*  sa12345         -   Simone Serra          */
+/*  jsa41678        -   Juliano Sabella       */
+/*  kprezend        -   Katia Bezerra         */
+/*  581888          -   Muriell Murata                      */
+/*  fcs43831        -   Francisco Christian Sales Bezerra   */
+
+
