@@ -16,25 +16,25 @@ UPDATE cPedido.
 END.*/
 
 /* Defini‡Æo da vari veis */
-def var h-bodi317pr          as handle no-undo.
-def var h-bodi317sd          as handle no-undo.
-def var h-bodi317im1bra      as handle no-undo.
-def var h-bodi317va          as handle no-undo.
-def var h-bodi317in          as handle no-undo.
-def var h-bodi317ef          as handle no-undo.
-def var l-proc-ok-aux        as log    no-undo.
-def var c-ultimo-metodo-exec as char   no-undo.
-def var c-cod-estabel        as char   no-undo.
-def var c-serie              as char   no-undo.
-def var da-dt-emis-nota      as date   no-undo.
-def var da-dt-base-dup       as date   no-undo.
-def var da-dt-prvenc         as date   no-undo.
+def var h-bodi317pr          as HANDLE NO-UNDO.
+def var h-bodi317sd          as HANDLE NO-UNDO.
+def var h-bodi317im1bra      as HANDLE NO-UNDO.
+def var h-bodi317va          as HANDLE NO-UNDO.
+def var h-bodi317in          as HANDLE NO-UNDO.
+def var h-bodi317ef          as HANDLE NO-UNDO.
+def var l-proc-ok-aux        as LOG    NO-UNDO.
+def var c-ultimo-metodo-exec as CHAR   NO-UNDO.
+def var c-cod-estabel        as CHAR   NO-UNDO.
+def var c-serie              as char   NO-UNDO.
+def var da-dt-emis-nota      as date   NO-UNDO.
+def var da-dt-base-dup       as date   NO-UNDO.
+def var da-dt-prvenc         as date   NO-UNDO.
 /*def var c-seg-usuario        as char   no-undo.*/
-def var c-nome-abrev         as char   no-undo.   
-def var c-nr-pedcli          as char   no-undo.
-def var c-nat-operacao       as char   no-undo.
-def var c-cod-canal-venda    as char   no-undo.
-def var i-seq-wt-docto       as int    no-undo.
+def var c-nome-abrev         as char   NO-UNDO.   
+def var c-nr-pedcli          as char   NO-UNDO.
+def var c-nat-operacao       as char   NO-UNDO.
+def var c-cod-canal-venda    as char   NO-UNDO.
+def var i-seq-wt-docto       as int    NO-UNDO.
 
 /* Def temp-table de erros. Ela tb‚m est  definida na include dbotterr.i */
 def temp-table rowerrors no-undo

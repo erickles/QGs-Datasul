@@ -20,8 +20,8 @@ PUT "Nota"          ";"
 
 FOR EACH nota-fiscal WHERE /*nota-fiscal.cod-estabel = "22"
                        AND*/ nota-fiscal.emite-duplic = YES
-                       AND nota-fiscal.dt-emis >= 01/01/2016
-                       AND nota-fiscal.dt-emis <= 12/01/2016
+                       AND nota-fiscal.dt-emis >= 01/01/2017
+                       AND nota-fiscal.dt-emis <= 10/31/2017
                        AND nota-fiscal.dt-canc = ?
                        NO-LOCK:
         

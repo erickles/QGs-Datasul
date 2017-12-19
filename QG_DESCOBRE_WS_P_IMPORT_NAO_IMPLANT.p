@@ -16,4 +16,4 @@ FOR EACH ws-p-import NO-LOCK WHERE DATE(ws-p-import.data-envio) >= 12/01/2016:
 
 END.
 
-OUTPUT CLOSE.
+OUTPUT CLOSE.                            

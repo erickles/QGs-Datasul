@@ -170,9 +170,9 @@ REPEAT:
         OS-COMMAND SILENT VALUE(cComando).
 
         /* Pega a senha para descriptografia */
-        RUN esp\esapiDecript.p ON SERVER hAppSrv (INPUT "\\SRVVM01\Scan\T00831.00",
-                                                  INPUT "E:\ESCRITURAL\T00831.00",
-                                                  INPUT "\\SRVVM01\Scan\T00831.00",
+        RUN esp\esapiDecript.p ON SERVER hAppSrv (INPUT "\\SRVVM01\ScanTI\ied241.bco001.311017111805195.xdsm.c56992951000149",
+                                                  INPUT "E:\ESCRITURAL\ied241.bco001.311017111805195.xdsm.c56992951000149",
+                                                  INPUT "\\SRVVM01\ScanTI\ied241.bco001.311017111805195.xdsm.c56992951000149",
                                                   INPUT STRING(cSenha)).
         
         ASSIGN lApp = fDesconectaAppServer().

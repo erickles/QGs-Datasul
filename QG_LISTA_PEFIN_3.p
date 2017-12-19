@@ -14,7 +14,7 @@ PUT "EMPRESA"           ";"
     "Titulo no pefin?"  ";"
     "Cliente no Pefin"  SKIP.
 
-FOR EACH es-titulo-cr NO-LOCK:
+FOR EACH es-titulo-cr NO-LOCK WHERE es-titulo-cr.cod-emitente = 203428:
     
     FIND FIRST es-emitente-dis WHERE es-emitente-dis.cod-emitente = es-titulo-cr.cod-emitente NO-LOCK NO-ERROR.
     

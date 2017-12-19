@@ -8,6 +8,7 @@
 * Versao   : 2.06.00.000 
 ******************************************************************************/
 {include\i-buffer.i}
+{include/i-ambiente.i}
 DEFINE VARIABLE cNumeroPedido AS CHARACTER FORMAT "X(12)"  NO-UNDO.
 
 DEFINE VARIABLE cProgramZip                 AS CHARACTER    NO-UNDO.
@@ -30,7 +31,7 @@ DEFINE TEMP-TABLE ttError NO-UNDO
     INDEX idxSeq IS PRIMARY seqErro.
 
 /* Define o ambiente */   
-IF SUBSTRING(PROPATH,1,2) = "T:" THEN
+IF adm-ambiente = "PRODUCAO" THEN
     ASSIGN iAmbiente = 1. /*PRODU€ÇO*/
 ELSE
 ASSIGN iAmbiente = 2. /*DESENVOLVIMENTO*/

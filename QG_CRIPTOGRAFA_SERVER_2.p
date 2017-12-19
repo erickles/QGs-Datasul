@@ -175,8 +175,8 @@ REPEAT:
         END.
         
         /* Criptografa arquivo */
-        RUN esp\esapiCript.r ON SERVER hAppSrv (INPUT "\\SRVVM01\ScanTI\teste.rem",
-                                                INPUT "E:\ESCRITURAL\TOR\PAG\ITAU\REM\teste.rem",
+        RUN esp\esapiCript.r ON SERVER hAppSrv (INPUT "\\SRVVM01\ScanTI\iedtst.xdsm.261017113711.bco001",
+                                                INPUT "E:\ESCRITURAL\TOR\PAG\ITAU\REM\iedtst.xdsm.261017113711.bco001",
                                                 INPUT cChave).
         
         ASSIGN lApp = fDesconectaAppServer().
@@ -200,8 +200,8 @@ REPEAT:
         END.
 
         /* Criptografa arquivo */
-        RUN esp\esapiCript.p ON SERVER hAppSrv (INPUT "\\SRVVM01\ScanTI\teste.rem",
-                                                INPUT "E:\ESCRITURAL\TOR\PAG\ITAU\REM\teste.rem",
+        RUN esp\esapiCript.p ON SERVER hAppSrv (INPUT "\\SRVVM01\ScanTI\iedtst.xdsm.261017113711.bco001",
+                                                INPUT "E:\ESCRITURAL\TOR\PAG\ITAU\REM\iedtst.xdsm.261017113711.bco001",
                                                 INPUT cChave).
 
         ASSIGN lApp = fDesconectaAppServer().
