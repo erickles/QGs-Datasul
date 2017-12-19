@@ -2,7 +2,7 @@ DEFINE VARIABLE iCont       AS INTEGER     NO-UNDO.
 DEFINE VARIABLE cRetorno    AS CHARACTER   NO-UNDO.
 DEFINE VARIABLE lMessageSent AS LOGICAL     NO-UNDO.
 
-OUTPUT TO "C:\Temp\comunica_112017.csv".
+OUTPUT TO "C:\Temp\comunica_072017.csv".
 
 PUT "data-envio"    ";" 
     "hora-envio"    ";" 
@@ -20,10 +20,9 @@ PUT "data-envio"    ";"
 
 lMessageSent = YES.
 
-FOR EACH es-comunica-cliente-envio WHERE es-comunica-cliente-envio.data-envio >= 11/01/2017
-                                     AND es-comunica-cliente-envio.data-envio <= 11/30/2017
-                                     AND (es-comunica-cliente-envio.tipo = "SMS" OR es-comunica-cliente-envio.tipo = "SMS_COBRANCA")
-                                     NO-LOCK:
+FOR EACH es-comunica-cliente-envio WHERE es-comunica-cliente-envio.tipo = "SMS_COBRANCA"
+                                     AND es-comunica-cliente-envio.data-envio = ?
+                                     :
 
     IF NOT lMessageSent AND es-comunica-cliente-envio.log-envio = "MessageSent" THEN NEXT.
     
@@ -50,7 +49,7 @@ FOR EACH es-comunica-cliente-envio WHERE es-comunica-cliente-envio.data-envio >=
                        es-comunica-cliente-envio.sucesso-envio                          ";"
                        es-comunica-cliente-envio.tipo                                   ";"
                        es-comunica-cliente-envio.atividade                              SKIP.
-
+        
         /*END.*/
 
     /*END.*/
@@ -58,6 +57,7 @@ FOR EACH es-comunica-cliente-envio WHERE es-comunica-cliente-envio.data-envio >=
     ASSIGN es-comunica-cliente-envio.data-envio = ?
              es-comunica-cliente-envio.log-envio  = "".
     */
+    DELETE es-comunica-cliente-envio.
 END.
 
 OUTPUT CLOSE.

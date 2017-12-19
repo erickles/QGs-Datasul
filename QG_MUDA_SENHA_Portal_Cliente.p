@@ -7,15 +7,18 @@ UPDATE iCodEmitente LABEL "Cod. Cliente".
 FIND FIRST emitente NO-LOCK WHERE emitente.cod-emit = iCodEmitente NO-ERROR.
 IF AVAIL emitente THEN DO:
     
-    FIND FIRST ws-emitente WHERE ws-emitente.cgc = emitente.cgc NO-LOCK NO-ERROR.
+    FIND FIRST ws-emitente WHERE ws-emitente.cgc = emitente.cgc NO-ERROR.
 
     RUN Descriptografa (INPUT ws-emitente.senha, OUTPUT cSenha).
 
-    MESSAGE 'Codigo Cliente: ' emitente.cod-emit    SKIP
-            'Usuario.: ' emitente.cgc               SKIP
-            'Senha...: ' cSenha                     SKIP
-            'Email: ' emitente.e-mail               SKIP
-            'Email..portal: ' ws-emitente.e-mail
+    UPDATE cSenha FORMAT "x(30)".
+
+    RUN CriptoGrafa(INPUT cSenha,
+                    OUTPUT cSenha).
+    
+    ASSIGN ws-emitente.senha = cSenha.
+
+    MESSAGE cSenha
             VIEW-AS ALERT-BOX INFO BUTTONS OK.
 
 END.
@@ -35,26 +38,22 @@ PROCEDURE CriptoGrafa:
             (ASC(SUBSTR(senha,vi-idx,1),"iso8859-1")) <= 122 THEN DO:
             IF (ASC(substr(senha,vi-idx,1),"iso8859-1")) = 122 THEN DO:                
                 z = chr((asc(substr(senha,vi-idx,1),"iso8859-1") + 38 )).
-                MESSAGE "1 " substr(senha,vi-idx,1)
-                        VIEW-AS ALERT-BOX INFO BUTTONS OK.
+                
             END.
             else
                 if (asc(substr(senha,vi-idx,1),"iso8859-1")) >= 105 and
                     (asc(substr(senha,vi-idx,1),"iso8859-1")) <= 106 then DO:
                     z = chr((asc(substr(senha,vi-idx,1),"iso8859-1") + 22)).
-                    MESSAGE "2 " substr(senha,vi-idx,1)
-                            VIEW-AS ALERT-BOX INFO BUTTONS OK.                        
+                    
                 END.                    
                 ELSE
                     if (asc(substr(senha,vi-idx,1),"iso8859-1")) = 109 then DO:
                         z = chr((asc(substr(senha,vi-idx,1),"iso8859-1") + 48)).
-                        MESSAGE "3 " substr(senha,vi-idx,1)
-                                VIEW-AS ALERT-BOX INFO BUTTONS OK.                            
+                        
                     END.                        
                     ELSE DO:
                         z = chr((asc(substr(senha,vi-idx,1),"iso8859-1") - 96)).
-                        MESSAGE "4 " substr(senha,vi-idx,1)
-                                VIEW-AS ALERT-BOX INFO BUTTONS OK.
+                        
                     END.
             p-senha = IF p-senha = "" THEN TRIM(z)
                       ELSE p-senha + TRIM(z).
@@ -67,8 +66,7 @@ PROCEDURE CriptoGrafa:
             p-senha = if p-senha = "" then trim(z)
                         else p-senha + trim(z).
 
-            MESSAGE "5 " substr(senha,vi-idx,1)
-                    VIEW-AS ALERT-BOX INFO BUTTONS OK.
+            
 
         end.          
         
@@ -78,8 +76,7 @@ PROCEDURE CriptoGrafa:
             if (asc(substr(senha,vi-idx,1),"iso8859-1")) >= 54 and
                 (asc(substr(senha,vi-idx,1),"iso8859-1")) <= 57 then DO:
                 z = chr((asc(substr(senha,vi-idx,1),"iso8859-1") + 87)).
-                MESSAGE "+87"
-                    VIEW-AS ALERT-BOX INFO BUTTONS OK.
+                
             END.
                 
             else
@@ -87,13 +84,10 @@ PROCEDURE CriptoGrafa:
 
                     z = chr((asc(substr(senha,vi-idx,1),"iso8859-1") + 76)).    
 
-                    MESSAGE z SKIP
-                            VIEW-AS ALERT-BOX INFO BUTTONS OK.
+                    
                 END.                    
                 ELSE DO:
-                    MESSAGE "-21" SKIP
-                            asc(substr(senha,vi-idx,1),"iso8859-1") - 21
-                            VIEW-AS ALERT-BOX INFO BUTTONS OK.
+                    
                     z = chr((asc(substr(senha,vi-idx,1),"iso8859-1") - 21)).
                 END.
                     

@@ -1,4 +1,4 @@
-FOR EACH emsuni.fornecedor WHERE cdn_fornec = 109394
+FOR EACH emsuni.fornecedor WHERE cdn_fornec = 108839
                              AND cod_empresa = "TOR":    
     
     DISP fornecedor.cod_id_feder
@@ -6,7 +6,7 @@ FOR EACH emsuni.fornecedor WHERE cdn_fornec = 109394
          fornecedor.cod_id_feder
          fornecedor.num_pessoa.
 
-    FIND FIRST pessoa_fisic WHERE num_pessoa_fisic = 129470 NO-LOCK NO-ERROR.
+    FIND FIRST pessoa_fisic WHERE num_pessoa_fisic = 50996 NO-LOCK NO-ERROR.
     IF AVAIL pessoa_fisic THEN DO:
 
         DISP pessoa_fisic.cod_id_feder    

@@ -2,7 +2,7 @@
 
 DEFINE VARIABLE cDescricao AS CHARACTER   NO-UNDO.
 
-OUTPUT TO "C:\temp\lancto_ctbl_01_2017_04_2017.csv.".
+OUTPUT TO "C:\temp\lancto_ctbl_01_2017_11_2017.csv.".
 
 PUT "num_lote_ctbl;"
     "num_lancto_ctbl;"
@@ -26,7 +26,7 @@ PUT "num_lote_ctbl;"
 
 FOR EACH lancto_ctbl NO-LOCK WHERE lancto_ctbl.cod_empresa = "TOR"
                                AND lancto_ctbl.dat_lancto_ctbl >= 01/01/2017
-                               AND lancto_ctbl.dat_lancto_ctbl <= 04/30/2017
+                               AND lancto_ctbl.dat_lancto_ctbl <= 11/30/2017
                                /*AND lancto_ctbl.cod_cenar_ctbl = "FISCAL"*/:
 
     FIND FIRST lote_ctbl OF lancto_ctbl NO-LOCK NO-ERROR.

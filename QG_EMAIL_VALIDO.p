@@ -88,4 +88,11 @@ FOR EACH es-envia-email WHERE es-envia-email.situacao = 1:
                 
     END.
 
+    IF TRIM(es-envia-email.para) = "tortuga_nfe@tortuga.com.br" THEN DO:
+        ASSIGN es-envia-email.situacao = 2
+               es-envia-email.dt-env   = TODAY
+               es-envia-email.hr-env   = STRING(TIME,"HH:MM:SS")
+               es-envia-email.erro     = "E-mail inibido para envio".                        
+    END.
+
 END.

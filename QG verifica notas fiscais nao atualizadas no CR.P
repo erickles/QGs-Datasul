@@ -1,4 +1,4 @@
-OUTPUT TO c:\temp\nfs_062017.csv.
+OUTPUT TO c:\temp\nfs_082017.csv.
 
 PUT "dt-emis-nota;"
     "dt-atual-cr;"
@@ -18,8 +18,8 @@ FOR EACH nota-fiscal
    WHERE nota-fiscal.dt-atual-cr  = ?
      AND nota-fiscal.emite-duplic = YES
      AND nota-fiscal.dt-canc = ?
-     AND nota-fiscal.dt-emis-nota >= 06/01/2017
-     AND nota-fiscal.dt-emis-nota <= 06/30/2017:
+     AND nota-fiscal.dt-emis-nota >= 09/01/2017
+     AND nota-fiscal.dt-emis-nota <= 09/30/2017 NO-LOCK:
     
     FIND FIRST tit_acr WHERE tit_acr.cod_estab       = nota-fiscal.cod-estabel 
                          AND tit_acr.cod_ser_docto   = nota-fiscal.serie
@@ -30,7 +30,7 @@ FOR EACH nota-fiscal
     
     /*
     IF NOT AVAIL tit_acr THEN DO:
-        
+        iCont = iCont + 1.
         /*nota-fiscal.dt-atual-cr = ?.*/
         
         PUT nota-fiscal.dt-emis-nota                            ";"
@@ -60,7 +60,7 @@ FOR EACH nota-fiscal
             IF AVAIL tit_acr THEN "Sim" ELSE "Nao"              ";"
             IF nota-fiscal.dt-canc = ? THEN "Nao" ELSE "Sim"    SKIP.
           
-        ASSIGN nota-fiscal.dt-atual-cr = tit_acr.dat_emis_docto.
+        /*ASSIGN nota-fiscal.dt-atual-cr = tit_acr.dat_emis_docto.*/
     END.
     
 END.
